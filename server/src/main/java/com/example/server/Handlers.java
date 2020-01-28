@@ -38,7 +38,7 @@ public class Handlers {
 
 		@Override
 		public void handle(HttpExchange he) throws IOException {
-
+			System.out.println("DEVICES HANDLER REQUEST");
 			String requestMethod = he.getRequestMethod();
 			URI requestedUri = he.getRequestURI();
 			String path = requestedUri.getPath();

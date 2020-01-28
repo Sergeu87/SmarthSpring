@@ -24,9 +24,9 @@ public class ControlCommandReceiver {
 
 
     public void start() {
-        Scanner reader = new Scanner(System.in);  // Reading from System.in
+//        Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println(initialOptions);
-        int n = reader.nextInt(); // Scans the next token of the input as an int.
+//        int n = reader.nextInt(); // Scans the next token of the input as an int.
         System.out.println("thanks!");
     }
 }

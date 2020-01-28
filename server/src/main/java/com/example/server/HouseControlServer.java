@@ -12,6 +12,7 @@ import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class HouseControlServer {
@@ -94,7 +95,7 @@ public class HouseControlServer {
 
 	// Main
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		System.out.println("=> Creating Server");
 		HouseControlServer houseControl = new HouseControlServer();
@@ -111,13 +112,16 @@ public class HouseControlServer {
 
 			// startServer http server
 			System.out.println("=> Starting HTTP Server ...");
-//			SimpleHttpServer httpServer = new SimpleHttpServer();
 			houseControl.startServer(PORT);
 
 			// startServer command receiver
 			System.out.println("=> Starting Command Receiver ...");
 			ControlCommandReceiver commandReceiver = new ControlCommandReceiver();
 			commandReceiver.start();
+
+			System.out.println("=> Press [ENTER] to stop HTTP server ...");
+			System.in.read();
+			houseControl.Stop();
 		}
 	}
 }
