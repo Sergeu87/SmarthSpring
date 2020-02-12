@@ -14,12 +14,22 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * The type Events adapter.
+ */
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> {
 
     private List<EventResponse> mEvents;
     private EventsContract.Presenter mPresenter;
     private Context mContext;
 
+    /**
+     * Instantiates a new Events adapter.
+     *
+     * @param context   the context
+     * @param events    the events
+     * @param presenter the presenter
+     */
     public EventsAdapter(Context context,
                          List<EventResponse> events,
                          EventsContract.Presenter presenter) {
@@ -57,6 +67,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         return mEvents.size();
     }
 
+    /**
+     * Replace data.
+     *
+     * @param events the events
+     */
     public void replaceData(List<EventResponse> events) {
         setEventsList(events);
         this.notifyDataSetChanged();
@@ -67,14 +82,34 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         mEvents.addAll(events);
     }
 
+    /**
+     * The type Event view holder.
+     */
     public class EventViewHolder extends RecyclerView.ViewHolder {
+        /**
+         * The M view.
+         */
         View mView;
+        /**
+         * The M event description.
+         */
         @BindView(R.id.event_description)
         TextView mEventDescription;
+        /**
+         * The M event timestamp.
+         */
         @BindView(R.id.event_timestamp)
         TextView mEventTimestamp;
+        /**
+         * The M item.
+         */
         public EventResponse mItem;
 
+        /**
+         * Instantiates a new Event view holder.
+         *
+         * @param view the view
+         */
         public EventViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);

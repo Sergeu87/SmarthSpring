@@ -26,9 +26,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by isabelcosta on 12-May-17.
+ * Created by Serhii Razovyi on 07-Nov-19.
  */
-
 public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceViewHolder> {
 
     private List<Device> mDevicesList;
@@ -38,6 +37,14 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
     private Context mContext;
     private boolean _isByDivisions;
 
+    /**
+     * Instantiates a new Devices adapter.
+     *
+     * @param context         the context
+     * @param presenter       the presenter
+     * @param devicesMap      the devices map
+     * @param devicesStateMap the devices state map
+     */
     public DevicesAdapter(Context context,
                           DevicesContract.Presenter presenter,
                           List<Device> devicesMap,
@@ -49,6 +56,14 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
         this._isByDivisions = true;
     }
 
+    /**
+     * Instantiates a new Devices adapter.
+     *
+     * @param context         the context
+     * @param presenter       the presenter
+     * @param devicesMap      the devices map
+     * @param devicesStateMap the devices state map
+     */
     public DevicesAdapter(Context context,
                           AllControlContract.Presenter presenter,
                           List<Device> devicesMap,
@@ -111,6 +126,12 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
         return mDevicesStateList.size();
     }
 
+    /**
+     * Replace data.
+     *
+     * @param devices      the devices
+     * @param devicesState the devices state
+     */
     public void replaceData(List<Device> devices, List<DeviceStateResponse> devicesState) {
         setDevicesStateList(devices, devicesState);
         this.notifyDataSetChanged();
@@ -123,18 +144,41 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
         mDevicesStateList.addAll(devicesState);
     }
 
+    /**
+     * The type Device view holder.
+     */
     public class DeviceViewHolder extends RecyclerView.ViewHolder {
+        /**
+         * The Device icon.
+         */
         @BindView(R.id.device_icon)
         ImageView deviceIcon;
+        /**
+         * The Device name.
+         */
         @BindView(R.id.device_name)
         TextView deviceName;
+        /**
+         * The Device division.
+         */
         @BindView(R.id.device_division)
         TextView deviceDivision;
+        /**
+         * The Properties list.
+         */
         @BindView(R.id.property_list)
         RecyclerView propertiesList;
+        /**
+         * The Save value button.
+         */
         @BindView(R.id.save_value_button)
         Button saveValueButton;
 
+        /**
+         * Instantiates a new Device view holder.
+         *
+         * @param view the view
+         */
         public DeviceViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);

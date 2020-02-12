@@ -7,6 +7,9 @@ import com.example.smarthomeapp.R;
 
 import butterknife.ButterKnife;
 
+/**
+ * The type Base activity.
+ */
 public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
@@ -16,6 +19,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+    /**
+     * Gets content view id.
+     *
+     * @return the content view id
+     */
     protected abstract int getContentViewId();
 
 }

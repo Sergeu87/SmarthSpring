@@ -9,26 +9,59 @@ import com.example.utils.domain.Device;
 import java.util.List;
 
 /**
- * Created by isabelcosta on 25-May-17.
+ * Created by Serhii Razovyi on 10-Nov-19.
  */
-
 public class AllControlContract {
 
+    /**
+     * The interface View.
+     */
     interface View extends BaseView<Presenter> {
 
+        /**
+         * Sets loading indicator.
+         *
+         * @param active the active
+         */
         void setLoadingIndicator(boolean active);
 
+        /**
+         * Show all devices.
+         *
+         * @param devices      the devices
+         * @param devicesState the devices state
+         */
         void showAllDevices(List<Device> devices, List<DeviceStateResponse> devicesState);
 
+        /**
+         * Show no devices.
+         */
         void showNoDevices();
 
+        /**
+         * Is active boolean.
+         *
+         * @return the boolean
+         */
         boolean isActive();
     }
 
+    /**
+     * The interface Presenter.
+     */
     public interface Presenter extends BasePresenter {
 
+        /**
+         * Result.
+         *
+         * @param requestCode the request code
+         * @param resultCode  the result code
+         */
         void result(int requestCode, int resultCode);
 
+        /**
+         * Load all devices.
+         */
         void loadAllDevices();
     }
 

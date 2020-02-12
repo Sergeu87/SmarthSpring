@@ -3,9 +3,8 @@ package com.example.smarthomeapp.httpentities;
 import java.util.List;
 
 /**
- * Created by isabelcosta on 11-May-17.
+ * Created by Serhii Razovyi on 06-Nov-19.
  */
-
 public class DivisionDevicesResponse {
 
     private List<DeviceStateResponse> myDevices;

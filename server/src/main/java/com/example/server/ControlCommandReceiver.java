@@ -3,9 +3,8 @@ package com.example.server;
 import java.util.Scanner;
 
 /**
- * Created by isabelcosta on 10-May-17.
+ * Created by Serhii Razovyi on 05-Nov-19.
  */
-
 public class ControlCommandReceiver {
 
     private String initialOptions = "\n" + "Execute one of these commands:"
@@ -18,11 +17,12 @@ public class ControlCommandReceiver {
 
     /*
     * Initial values
-    *
-    *
     * */
 
 
+    /**
+     * Start.
+     */
     public void start() {
 //        Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println(initialOptions);

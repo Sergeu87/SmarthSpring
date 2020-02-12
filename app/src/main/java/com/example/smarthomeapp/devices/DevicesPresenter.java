@@ -20,9 +20,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by isabelcosta on 12-May-17.
+ * Created by Serhii Razovyi on 07-Nov-19.
  */
-
 public class DevicesPresenter implements DevicesContract.Presenter{
 
     private final DevicesRepository mDevicesRepository;
@@ -35,6 +34,14 @@ public class DevicesPresenter implements DevicesContract.Presenter{
     private List<Device> mDevicesList = new LinkedList<>();
     private List<DeviceStateResponse> mDevicesStateList = new LinkedList<>();
 
+    /**
+     * Instantiates a new Devices presenter.
+     *
+     * @param deviceStateResponses the device state responses
+     * @param devicesRepository    the devices repository
+     * @param devicesView          the devices view
+     * @param divisionId           the division id
+     */
     public DevicesPresenter(List<DeviceStateResponse> deviceStateResponses,
                             @NonNull DevicesRepository devicesRepository,
                             @NonNull DevicesContract.View devicesView,

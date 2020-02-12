@@ -13,9 +13,8 @@ import java.util.Map;
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
 
 /**
- * Created by isabelcosta on 12-May-17.
+ * Created by Serhii Razovyi on 07-Nov-19.
  */
-
 public class DevicesRepository implements DevicesDataSource{
 
     private static DevicesRepository INSTANCE = null;
@@ -32,6 +31,12 @@ public class DevicesRepository implements DevicesDataSource{
         mDevicesRemoteDataSource = checkNotNull(devicesRemoteDataSource);
     }
 
+    /**
+     * Gets instance.
+     *
+     * @param devicesRemoteDataSource the devices remote data source
+     * @return the instance
+     */
     public static DevicesRepository getInstance(DevicesDataSource devicesRemoteDataSource) {
         if (INSTANCE == null) {
             INSTANCE = new DevicesRepository(devicesRemoteDataSource);
@@ -39,6 +44,9 @@ public class DevicesRepository implements DevicesDataSource{
         return INSTANCE;
     }
 
+    /**
+     * Destroy instance.
+     */
     public static void destroyInstance() {
         INSTANCE = null;
     }
@@ -62,6 +70,6 @@ public class DevicesRepository implements DevicesDataSource{
 
     @Override
     public void updateDeviceValue(@NonNull Map<String,String> devicesValues, @NonNull UpdateDeviceValueCallback callback) {
-
+        mDevicesRemoteDataSource.updateDeviceValue(devicesValues, callback);
     }
 }

@@ -15,36 +15,35 @@ import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.app.SmartHomeApplication;
 import com.example.smarthomeapp.login.LoginActivity;
 import com.example.smarthomeapp.util.Constants;
-import com.example.smarthomeapp.util.LoadXMLAsyncTask;
 import com.example.smarthomeapp.util.SharedPreferencesUtils;
 import com.example.utils.domain.HomeConfigEntity;
 import com.example.utils.domain.User;
 
-import java.util.List;
-
 import butterknife.BindView;
 
+/**
+ * The type Splash screen activity.
+ */
 public class SplashScreenActivity extends BaseActivity implements SplashScreenContract.View{
 
-    /** Duration of wait **/
     private final int SPLASH_DISPLAY_LENGTH = 1000;
-    private LoadXMLAsyncTask mLoadHouseTask = null;
     private SplashScreenContract.Presenter mSplashPresenter;
 
+    /**
+     * The House loader.
+     */
     @BindView(R.id.splash_progress_bar)
     ProgressBar houseLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // Set to FullScreen Mode
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         super.onCreate(savedInstanceState);
 
-        // Hide Action Bar
         getSupportActionBar().hide();
 
         mSplashPresenter = new SplashPresenter(this);
@@ -52,8 +51,6 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenCo
 
         if (isRememberMe()) {
             setLoadingIndicator(true);
-            mLoadHouseTask = new LoadXMLAsyncTask(getBaseContext(), mSplashPresenter);
-            mLoadHouseTask.execute();
         } else {
             enterMainScreen(SplashScreenContract.LOGIN);
         }
@@ -77,7 +74,6 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenCo
 
     @Override
     public void showHouseConfigResult(HomeConfigEntity homeConfigEntity) {
-        mLoadHouseTask = null;
         setLoadingIndicator(false);
 
         if (homeConfigEntity != null) {
@@ -96,11 +92,6 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenCo
     }
 
     @Override
-    public void cancelLoadAsyncTask() {
-        mLoadHouseTask = null;
-    }
-
-    @Override
     public boolean isActive() {
         return false;
     }
@@ -108,9 +99,6 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenCo
     @Override
     public void enterMainScreen(final int screenToGoTo) {
 
-        /* New Handler to start the Menu-Activity
-         * and close this Splash-Screen after some seconds.
-         * */
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
@@ -123,7 +111,6 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenCo
                     mainIntent = new Intent(SplashScreenActivity.this, LoginActivity.class);
                 }
 
-                /* Create an Intent that will start the Home Activity. */
                 SplashScreenActivity.this.startActivity(mainIntent);
 
                 SplashScreenActivity.this.finish();

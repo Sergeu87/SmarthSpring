@@ -15,26 +15,50 @@ import com.example.smarthomeapp.util.ActivityUtils;
 
 import butterknife.BindView;
 
+/**
+ * The type Main activity.
+ */
 public class MainActivity extends BaseActivity implements BaseFragment.OnFragmentInteractionListener {
 
+    /**
+     * The Bottom navigation view.
+     */
     @BindView(R.id.bottom_navigation_bar)
     LinearLayout bottomNavigationView;
 
+    /**
+     * The Overview menu option view.
+     */
     @BindView(R.id.action_overview)
     LinearLayout overviewMenuOptionView;
 
+    /**
+     * The Divisions menu option view.
+     */
     @BindView(R.id.action_divisions)
     LinearLayout divisionsMenuOptionView;
 
+    /**
+     * The Events menu option view.
+     */
     @BindView(R.id.action_events)
     LinearLayout eventsMenuOptionView;
 
+    /**
+     * The Control menu option view.
+     */
     @BindView(R.id.action_control)
     LinearLayout controlMenuOptionView;
 
+    /**
+     * The Settings menu option view.
+     */
     @BindView(R.id.action_settings)
     LinearLayout settingsMenuOptionView;
 
+    /**
+     * The Fragment container.
+     */
     @BindView(R.id.content_frame)
     View fragmentContainer;
 
@@ -56,6 +80,9 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
         return R.layout.activity_main;
     }
 
+    /**
+     * Set listeners.
+     */
     public void setListeners(){
 
         overviewMenuOptionView.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +117,12 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
         });
     }
 
+    /**
+     * Replace fragment.
+     *
+     * @param fragmentToReplace the fragment to replace
+     * @param titleResId        the title res id
+     */
     public void replaceFragment(BaseFragment fragmentToReplace, int titleResId){
 
         ActionBar actionBar = getSupportActionBar();
@@ -101,6 +134,12 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
         }
     }
 
+    /**
+     * Add fragment.
+     *
+     * @param fragmentToReplace the fragment to replace
+     * @param titleResId        the title res id
+     */
     public void addFragment(BaseFragment fragmentToReplace, int titleResId){
 
         ActionBar actionBar = getSupportActionBar();

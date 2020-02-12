@@ -18,15 +18,25 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
- * Created by isabelcosta on 12-May-17.
+ * Created by Serhii Razovyi on 07-Nov-19.
  */
-
 public class DevicesRemoteDataSource implements DevicesDataSource {
 
     private static DevicesRemoteDataSource INSTANCE;
+    /**
+     * The Service.
+     */
     DevicesService _service;
+    /**
+     * The Retrofit.
+     */
     Retrofit _retrofit = RemoteUtils.getRetrofitObj();
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static DevicesRemoteDataSource getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new DevicesRemoteDataSource();
@@ -34,54 +44,52 @@ public class DevicesRemoteDataSource implements DevicesDataSource {
         return INSTANCE;
     }
 
-    // Prevent direct instantiation.
+
     private DevicesRemoteDataSource() {
 
-        // Create a very simple REST adapter which points the SmartHomeApp API endpoint.
+
         _service = _retrofit.create(DevicesService.class);
     }
 
     @Override
     public void getAllDevices(@NonNull final LoadDevicesCallback callback) {
-        // Fetch a list of the division devices repositories.
+
         Call<List<DeviceStateResponse>> devicesCall = _service.getAllDevices();
 
-        // Execute the call asynchronously. Get a positive or negative callback.
+
         devicesCall.enqueue(new Callback<List<DeviceStateResponse>>() {
             @Override
             public void onResponse(Call<List<DeviceStateResponse>> call, Response<List<DeviceStateResponse>> response) {
-                // The network call was a success and we got a response
+
                 List<DeviceStateResponse> devices = response.body();
                 callback.onDevicesLoaded(devices);
             }
 
             @Override
             public void onFailure(Call<List<DeviceStateResponse>> call, Throwable t) {
-                // the network call was a failure
+
                 callback.onDataNotAvailable();
             }
         });
     }
 
     @Override
-    public void updateDeviceValue(@NonNull Map<String, String> devicesValues, @NonNull UpdateDeviceValueCallback callback) {
-//        // Fetch a list of the division devices repositories.
-//        Call<List<DeviceStateResponse>> devicesCall = _service.getDevices(divisionId);
-//
-//        // Execute the call asynchronously. Get a positive or negative callback.
-//        devicesCall.enqueue(new Callback<List<DeviceStateResponse>>() {
-//            @Override
-//            public void onResponse(Call<List<DeviceStateResponse>> call, Response<List<DeviceStateResponse>> response) {
-//                // The network call was a success and we got a response
-//                List<DeviceStateResponse> devices = response.body();
-//                callback.onDevicesLoaded(devices);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<DeviceStateResponse>> call, Throwable t) {
-//                // the network call was a failure
-//                callback.onDataNotAvailable();
-//            }
-//        });
+    public void updateDeviceValue(final @NonNull Map<String,String> devicesValues, final @NonNull UpdateDeviceValueCallback callback) {
+
+        Call<DeviceStateResponse> devicesCall = _service.saveDevice(devicesValues);
+
+        // Execute the call asynchronously. Get a positive or negative callback.
+        devicesCall.enqueue(new Callback<DeviceStateResponse>() {
+            @Override
+            public void onResponse(Call<DeviceStateResponse> call, Response<DeviceStateResponse> response) {
+                callback.onDeviceValueUpdated(true);
+            }
+
+            @Override
+            public void onFailure(Call<DeviceStateResponse> call, Throwable t) {
+                // the network call was a failure
+                callback.onDataNotAvailable();
+            }
+        });
     }
 }

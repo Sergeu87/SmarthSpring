@@ -39,22 +39,46 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
 
     private String mDivisionId;
 
+    /**
+     * The constant DEVICES_STATES_ARG.
+     */
     public static String DEVICES_STATES_ARG = "DEVICES_STATES_ARG";
+    /**
+     * The constant DIVISION_ID_ARG.
+     */
     public static String DIVISION_ID_ARG = "DIVISION_ID_ARG";
 
+    /**
+     * The M loader.
+     */
     @BindView(R.id.devices_loader_view)
     View mLoader;
 
+    /**
+     * The M no devices view.
+     */
     @BindView(R.id.empty_state_view)
     View mNoDevicesView;
+    /**
+     * The M empty state icon.
+     */
     @BindView(R.id.empty_state_icon)
     ImageView mEmptyStateIcon;
+    /**
+     * The M empty state text.
+     */
     @BindView(R.id.empty_state_text)
     TextView mEmptyStateText;
 
+    /**
+     * The M container view.
+     */
     @BindView(R.id.devices_container_view)
     View mContainerView;
 
+    /**
+     * The M devices recycler view.
+     */
     @BindView(R.id.devices_list)
     RecyclerView mDevicesRecyclerView;
 
@@ -62,6 +86,8 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
+     * @param divisionId           the division id
+     * @param deviceStateResponses the device state responses
      * @return A new instance of fragment DivisionsFragment.
      */
     public static DevicesFragment newInstance(String divisionId, List<DeviceStateResponse> deviceStateResponses) {
@@ -73,8 +99,11 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
         return fragment;
     }
 
+    /**
+     * Instantiates a new Devices fragment.
+     */
     public DevicesFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -87,7 +116,7 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
             mDivisionId = getArguments().getString(DIVISION_ID_ARG);
         }
 
-        // Create the presenter
+
         mPresenter = new DevicesPresenter(
                 devicesStateList,
                 Injection.provideDevicesRepository(getContext()),
@@ -112,13 +141,11 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_devices, container, false);
         ButterKnife.bind(this, view);
 
         mDevicesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        // Set the adapter
+
         mDevicesRecyclerView.setAdapter(mAdapter);
         return view;
     }

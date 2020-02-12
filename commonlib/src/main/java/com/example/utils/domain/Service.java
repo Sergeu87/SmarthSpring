@@ -1,7 +1,7 @@
 package com.example.utils.domain;
 
 /**
- * Created by isabelcosta on 28/03/2017.
+ * Created by Serhii Razovyi on 15-Oct-19.
  */
 public class Service {
 
@@ -13,24 +13,47 @@ public class Service {
 
     /**
      * Constructor
+     *
+     * @param id   the id
+     * @param name the name
      */
     public Service(String id, String name) {
         this.id = id;
         this.name = name;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         this.name = name;
     }

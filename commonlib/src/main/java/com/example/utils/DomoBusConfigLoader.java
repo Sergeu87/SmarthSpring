@@ -79,7 +79,7 @@ import static com.example.utils.HouseConfigConstants.VALUE;
 import static com.example.utils.HouseConfigConstants.VALUE_TYPE;
 
 /**
- * Created by isabelcosta on 18/03/2017.
+ * Created by Serhii Razovyi on 10-Oct-19.
  */
 public class DomoBusConfigLoader {
 
@@ -87,10 +87,18 @@ public class DomoBusConfigLoader {
     private String _configFilesServerPackage = "./server/src/main/java/com/example/server/configs";
     private HomeConfigEntity _homeConfig;
 
+    /**
+     * Instantiates a new Domo bus config loader.
+     */
     public DomoBusConfigLoader(){}
 
-    // Structures
 
+    /**
+     * Instantiates a new Domo bus config loader.
+     *
+     * @param configFileName the config file name
+     * @param isFromServer   the is from server
+     */
     public DomoBusConfigLoader(String configFileName, boolean isFromServer) {
 
         try {
@@ -98,9 +106,9 @@ public class DomoBusConfigLoader {
             File directoryFiles = new File(isFromServer
                     ? _configFilesServerPackage
                     : _configFilesCommonPackage
-            ); // config file folder path
+            );
 
-            File[] filesList = directoryFiles.listFiles(); // It gives list of all files in the folder.
+            File[] filesList = directoryFiles.listFiles();
 
             File file = null;
 
@@ -114,7 +122,6 @@ public class DomoBusConfigLoader {
                     SAXReader reader = new SAXReader();
                     Document document = reader.read(file);
 
-                    // Do something with the document here.
                     createStructures(document);
                 } else {
                     throw new DocumentException();
@@ -129,25 +136,33 @@ public class DomoBusConfigLoader {
         }
     }
 
+    /**
+     * Instantiates a new Domo bus config loader.
+     *
+     * @param document the document
+     */
     public DomoBusConfigLoader(Document document){
         createStructures(document);
     }
 
+    /**
+     * Get home config home config entity.
+     *
+     * @return the home config entity
+     */
     public HomeConfigEntity getHomeConfig(){
         return _homeConfig;
     }
 
     private void createStructures(Document document){
 
-        // Parse xml into structures
         _homeConfig = new HomeConfigEntity();
 
         System.out.println("Root element :" + document.getRootElement().getName());
 
-        // Root class is DomoBusSystem
         Element classElement = document.getRootElement();
 
-        // For testing purposes
+
 //        testingParser(classElement);
 
         parseHouse(classElement);
@@ -162,12 +177,8 @@ public class DomoBusConfigLoader {
         parseScalarValueTypeList(classElement);
     }
 
-    /**
-     * Parsers
-     */
 
     private void parseFloors(Element classElement) {
-        // Get Floors List
 
         List<Node> floorListXML = classElement.selectNodes(HOUSE + "/" + FLOOR_LIST + "/" + FLOOR);
         List<Floor> floorList = new ArrayList<>();
@@ -185,7 +196,6 @@ public class DomoBusConfigLoader {
     }
 
     private void parseDivisions(Element classElement){
-        // Get Divisions List
 
         List<Node> divisionListXML = classElement.selectNodes(HOUSE + "/" + DIVSION_LIST + "/" + DIVSION);
         List<Division> divisionList = new ArrayList<>();
@@ -205,7 +215,6 @@ public class DomoBusConfigLoader {
     }
 
     private void parseDivisionsType(Element classElement){
-        // Get Divisions Type List
 
         List<Node> divisionTypeListXML = classElement.selectNodes(DIVSION_TYPE_LIST + "/" + DIVSION_TYPE);
         List<DivisionType> divisionTypeList = new ArrayList<>();
@@ -222,7 +231,6 @@ public class DomoBusConfigLoader {
     }
 
     private void parseHouse(Element classElement){
-        // Get Divisions Type List
 
         Node houseXML = classElement.selectNodes(HOUSE).get(0);
 
@@ -239,7 +247,6 @@ public class DomoBusConfigLoader {
     }
 
     private void parseUsersList(Element classElement){
-        // Get Divisions Type List
 
         List<Node> userListXML = classElement.selectNodes(USER_LIST + "/" + USER);
         List<User> userList = new ArrayList<>();
@@ -258,7 +265,6 @@ public class DomoBusConfigLoader {
     }
 
     private void parseServicesList(Element classElement){
-        // Get Service List
 
         List<Node> serviceListXML = classElement.selectNodes(SERVICE_LIST + "/" + SERVICE);
         List<Service> serviceList = new ArrayList<>();
@@ -275,7 +281,6 @@ public class DomoBusConfigLoader {
     }
 
     private void parseDevicesList(Element classElement){
-        // Get Devices List
 
         List<Node> userListXML = classElement.selectNodes(DEVICE_LIST + "/" + DEVICE);
         List<Device> deviceList = new ArrayList<>();
@@ -318,7 +323,6 @@ public class DomoBusConfigLoader {
     }
 
     private void parseEnumValueTypeList(Element classElement){
-        // Get EnumValueType Type List
 
         List<Node> enumValueTypeListXML = classElement.selectNodes(
                 ENUM_VALUE_TYPE_LIST + "/" + ENUM_VALUE_TYPE);
@@ -385,7 +389,7 @@ public class DomoBusConfigLoader {
     }
 
     private ValueConversion getValueConversion(){
-        // FIXME: 11-May-17 create value conversion
+        // FIXME: 06-Nov-19 create value conversion
         return null;
     }
 
@@ -446,11 +450,16 @@ public class DomoBusConfigLoader {
         return "@" + attr;
     }
 
-    public static void main(String[] args) {
-
-        DomoBusConfigLoader configLoader = new DomoBusConfigLoader("basic_config_1.xml", false);
-        for (Division d : configLoader.getHomeConfig().getDivisionList()){
-            System.out.println(d.getName());
-        }
-    }
+//    /**
+//     * The entry point of application.
+//     *
+//     * @param args the input arguments
+//     */
+//    public static void main(String[] args) {
+//
+//        DomoBusConfigLoader configLoader = new DomoBusConfigLoader("basic_config_1.xml", false);
+//        for (Division d : configLoader.getHomeConfig().getDivisionList()){
+//            System.out.println(d.getName());
+//        }
+//    }
 }

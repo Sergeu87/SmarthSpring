@@ -15,8 +15,14 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * The type House control server.
+ */
 public class HouseControlServer {
 
+	/**
+	 * The constant PORT.
+	 */
 	public static int PORT = 9000;
 	private static String CONFIG_FILENAME = "basic_config_1.xml";
 	private static String INITIAL_VALUES_FILENAME = "initial_values.json";
@@ -24,11 +30,14 @@ public class HouseControlServer {
 	private static HomeConfigEntity homeConfiguration;
 	private HttpServer server;
 
-	/**
-	 * { device_ID, device_current_value }
-	 */
+
 	private static ConcurrentHashMap<String, DeviceStateResponse> devicesValues = new ConcurrentHashMap<>();
 
+	/**
+	 * Device values to devices response list.
+	 *
+	 * @return the list
+	 */
 	public static List<DeviceStateResponse> deviceValuesToDevicesResponse(){
 		List<DeviceStateResponse> list = new ArrayList<>();
 		for (Map.Entry<String, DeviceStateResponse> entry : devicesValues.entrySet()) {
@@ -37,42 +46,66 @@ public class HouseControlServer {
 		return list;
 	}
 
+	/**
+	 * Get devices values concurrent hash map.
+	 *
+	 * @return the concurrent hash map
+	 */
 	public static ConcurrentHashMap<String, DeviceStateResponse> getDevicesValues(){
 		return devicesValues;
 	}
 
+	/**
+	 * Get home configuration entity home config entity.
+	 *
+	 * @return the home config entity
+	 */
 	public static HomeConfigEntity getHomeConfigurationEntity(){
 		return homeConfiguration;
 	}
 
 	private HouseControlServer(){
 
-		// get initial values from json file
 		devicesValues = InitialValuesLoader.getDeviceInitialValues(INITIAL_VALUES_FILENAME);
 	}
 
-	// Getters and Setters
 
+	/**
+	 * Gets home configuration.
+	 *
+	 * @return the home configuration
+	 */
 	public HomeConfigEntity getHomeConfiguration() {
 		return homeConfiguration;
 	}
 
+	/**
+	 * Sets home configuration.
+	 *
+	 * @param homeConfiguration the home configuration
+	 */
 	public void setHomeConfiguration(HomeConfigEntity homeConfiguration) {
 		this.homeConfiguration = homeConfiguration;
 	}
 
-	// Helpers
 
+	/**
+	 * Populate device values.
+	 */
 	public void populateDeviceValues(){
 
 	}
 
+	/**
+	 * Start server.
+	 *
+	 * @param port the port
+	 */
 	public void startServer(int port) {
 		try {
 			server = HttpServer.create(new InetSocketAddress(port), 0);
 			System.out.println("Server started at " + port);
 
-			// Creating HTTP context
 			server.createContext("/", new Handlers.RootHandler());
 			server.createContext("/echoHeader", new Handlers.EchoHeaderHandler());
 			server.createContext("/echoGet", new Handlers.EchoGetHandler());
@@ -81,6 +114,8 @@ public class HouseControlServer {
 			server.createContext("/divisions", new Handlers.DivisionsHandler());
 			server.createContext("/events", new Handlers.EventsHandler());
 			server.createContext("/overview", new Handlers.OverviewHandler());
+			server.createContext("/config", new Handlers.ConfigHandler());
+			server.createContext("/login", new Handlers.UsersHandler());
 			server.setExecutor(null);
 			server.start();
 		} catch (IOException e) {
@@ -88,19 +123,26 @@ public class HouseControlServer {
 		}
 	}
 
+	/**
+	 * Stop.
+	 */
 	public void Stop() {
 		server.stop(0);
 		System.out.println("server stopped");
 	}
 
-	// Main
 
+	/**
+	 * The entry point of application.
+	 *
+	 * @param args the input arguments
+	 * @throws IOException the io exception
+	 */
 	public static void main(String[] args) throws IOException {
 
 		System.out.println("=> Creating Server");
 		HouseControlServer houseControl = new HouseControlServer();
 
-		// parsing configuration file
 		System.out.println("=> Parsing configuration file ...");
 		DomoBusConfigLoader configLoader = new DomoBusConfigLoader(CONFIG_FILENAME, true);
 		HomeConfigEntity homeConfig = configLoader.getHomeConfig();
@@ -110,11 +152,9 @@ public class HouseControlServer {
 		} else {
 			houseControl.setHomeConfiguration(configLoader.getHomeConfig());
 
-			// startServer http server
 			System.out.println("=> Starting HTTP Server ...");
 			houseControl.startServer(PORT);
 
-			// startServer command receiver
 			System.out.println("=> Starting Command Receiver ...");
 			ControlCommandReceiver commandReceiver = new ControlCommandReceiver();
 			commandReceiver.start();

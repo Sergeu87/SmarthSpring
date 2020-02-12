@@ -29,5 +29,23 @@
           "propertyValue": "OFF"
         }
       ]
+    },
+    {
+      "deviceId": "4",
+      "values": [
+        {
+          "propertyId": "1",
+          "propertyValue": "ON"
+        }
+      ]
+    },
+    {
+      "deviceId": "5",
+      "values": [
+        {
+          "propertyId": "1",
+          "propertyValue": "ON"
+        }
+      ]
     }
   ]

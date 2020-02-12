@@ -28,6 +28,9 @@ public class EventsFragment extends BaseFragment implements EventsContract.View 
     private EventsContract.Presenter mPresenter;
     private EventsAdapter mAdapter;
 
+    /**
+     * The M events recycler view.
+     */
     @BindView(R.id.event_list)
     RecyclerView mEventsRecyclerView;
 
@@ -38,6 +41,11 @@ public class EventsFragment extends BaseFragment implements EventsContract.View 
     public EventsFragment() {
     }
 
+    /**
+     * New instance events fragment.
+     *
+     * @return the events fragment
+     */
     public static EventsFragment newInstance() {
         EventsFragment fragment = new EventsFragment();
         return fragment;
@@ -47,7 +55,6 @@ public class EventsFragment extends BaseFragment implements EventsContract.View 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Create the presenter
         mPresenter = new EventsPresenter(this);
 
         mAdapter = new EventsAdapter(
@@ -63,7 +70,6 @@ public class EventsFragment extends BaseFragment implements EventsContract.View 
         View view = inflater.inflate(R.layout.fragment_events, container, false);
         ButterKnife.bind(this, view);
 
-        // Set the adapter
         mEventsRecyclerView.setAdapter(mAdapter);
         return view;
     }

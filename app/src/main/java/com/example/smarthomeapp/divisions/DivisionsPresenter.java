@@ -12,15 +12,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by isabelcosta on 06-May-17.
+ * Created by Serhii Razovyi on 19-Oct-19.
  */
-
 public class DivisionsPresenter implements DivisionsContract.Presenter {
 
     private final DivisionsRepository mDivisionsRepository;
     private final DivisionsContract.View mDivisionsView;
     private List<Division> mDivisionsList;
 
+    /**
+     * Instantiates a new Divisions presenter.
+     *
+     * @param divisionsRepository the divisions repository
+     * @param divisionsView       the divisions view
+     */
     public DivisionsPresenter(@NonNull DivisionsRepository divisionsRepository,
                               @NonNull DivisionsContract.View divisionsView) {
         mDivisionsRepository = divisionsRepository;
@@ -45,10 +50,10 @@ public class DivisionsPresenter implements DivisionsContract.Presenter {
 
         final String divisionId = mDivisionsList.get(divisionPosition).getId();
 
-        mDivisionsRepository.getDevices(divisionId, new DivisionsDataSource.LoadDevicesCallback() {
+        final DivisionsDataSource.LoadDevicesCallback devicesCallback = new DivisionsDataSource.LoadDevicesCallback() {
             @Override
             public void onDevicesLoaded(List<DeviceStateResponse> devices) {
-                // The view may not be able to handle UI updates anymore
+
                 if (!mDivisionsView.isActive()) {
                     return;
                 }
@@ -60,10 +65,11 @@ public class DivisionsPresenter implements DivisionsContract.Presenter {
             public void onDataNotAvailable() {
                 mDivisionsView.setLoadingIndicator(false);
 
-                // Send empty list
+
                 mDivisionsView.showDivisionDevicesUi(divisionId, new ArrayList<DeviceStateResponse>());
             }
-        });
+        };
+        mDivisionsRepository.getDevices(divisionId, devicesCallback);
     }
 
     @Override

@@ -33,8 +33,10 @@ public class BaseFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * Instantiates a new Base fragment.
+     */
     public BaseFragment() {
-        // Required empty public constructor
     }
 
     /**
@@ -45,7 +47,7 @@ public class BaseFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment BaseFragment.
      */
-    // TODO: Rename and change types and number of parameters
+// TODO: Rename and change types and number of parameters
     public static BaseFragment newInstance(String param1, String param2) {
         BaseFragment fragment = new BaseFragment();
         Bundle args = new Bundle();
@@ -68,14 +70,18 @@ public class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_parent, container, false);
         ButterKnife.bind(this, view);
 
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+    /**
+     * On button pressed.
+     *
+     * @param uri the uri
+     */
+// TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -105,12 +111,14 @@ public class BaseFragment extends Fragment {
      * to the activity and potentially other fragments contained in that
      * activity.
      * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        /**
+         * On fragment interaction.
+         *
+         * @param uri the uri
+         */
+// TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }

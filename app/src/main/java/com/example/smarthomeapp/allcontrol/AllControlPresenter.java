@@ -15,9 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by isabelcosta on 25-May-17.
+ * Created by Serhii Razovyi on 10-Nov-19.
  */
-
 public class AllControlPresenter implements AllControlContract.Presenter {
 
     private final DevicesRepository mDevicesRepository;
@@ -29,6 +28,13 @@ public class AllControlPresenter implements AllControlContract.Presenter {
     private List<DeviceStateResponse> mDevicesStateList = new LinkedList<>();
 
 
+    /**
+     * Instantiates a new All control presenter.
+     *
+     * @param deviceStateResponses the device state responses
+     * @param devicesRepository    the devices repository
+     * @param allControlView       the all control view
+     */
     public AllControlPresenter(List<DeviceStateResponse> deviceStateResponses,
                                @NonNull DevicesRepository devicesRepository,
                                @NonNull AllControlContract.View allControlView){
@@ -60,7 +66,7 @@ public class AllControlPresenter implements AllControlContract.Presenter {
         mDevicesRepository.getAllDevices(new DevicesDataSource.LoadDevicesCallback() {
             @Override
             public void onDevicesLoaded(List<DeviceStateResponse> devicesState) {
-                // The view may not be able to handle UI updates anymore
+
                 if (!mAllControlView.isActive()) {
                     return;
                 }
@@ -76,7 +82,7 @@ public class AllControlPresenter implements AllControlContract.Presenter {
             public void onDataNotAvailable() {
                 mAllControlView.setLoadingIndicator(false);
 
-                // Send empty list
+
                 mAllControlView.showAllDevices(new ArrayList<Device>(), new ArrayList<DeviceStateResponse>());
             }
         });

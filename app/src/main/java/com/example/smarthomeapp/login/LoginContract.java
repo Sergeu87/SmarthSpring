@@ -10,25 +10,49 @@ import com.example.utils.domain.HomeConfigEntity;
 import java.util.List;
 
 /**
- * Created by isabelcosta on 10-May-17.
+ * Created by Serhii Razovyi on 05-Nov-19.
  */
-
 public interface LoginContract {
 
+    /**
+     * The interface View.
+     */
     interface View extends BaseView<LoginContract.Presenter> {
 
+        /**
+         * Sets loading indicator.
+         *
+         * @param active the active
+         */
         void setLoadingIndicator(boolean active);
 
+        /**
+         * Show house config result.
+         *
+         * @param homeConfigEntity the home config entity
+         */
         void showHouseConfigResult(HomeConfigEntity homeConfigEntity);
 
-        void cancelLoadAsyncTask();
-
+        /**
+         * Is active boolean.
+         *
+         * @return the boolean
+         */
         boolean isActive();
 
     }
 
+    /**
+     * The interface Presenter.
+     */
     interface Presenter extends HouseConfigLoadPresenter {
 
+        /**
+         * Result.
+         *
+         * @param requestCode the request code
+         * @param resultCode  the result code
+         */
         void result(int requestCode, int resultCode);
     }
 }

@@ -33,9 +33,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by isabelcosta on 17-May-17.
+ * Created by Serhii Razovyi on 07-Nov-19.
  */
-
 public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context mContext;
@@ -49,6 +48,13 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private int ENUM = 1;
     private int SCALAR = 2;
 
+    /**
+     * Instantiates a new Device properties adapter.
+     *
+     * @param context                the context
+     * @param deviceTypeId           the device type id
+     * @param propertyValueResponses the property value responses
+     */
     public DevicePropertiesAdapter(
             Context context,
             String deviceTypeId,
@@ -86,9 +92,7 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         if(mViewType == ENUM) {
             EnumPropertyViewHolder enumHolder = (EnumPropertyViewHolder) holder;
 
-            // Set title
             enumHolder.enumTitle.setText(mCurrentProperty.getName());
-            // Set list of options
             EnumValueType enumValueType = mConfigEntity.getEnumByID(mCurrentProperty.getRefValueType());
             enumHolder.enumSelectionList.setLayoutManager(new LinearLayoutManager(mContext));
             enumHolder.enumSelectionList.setAdapter(new SelectableOptionsListViewAdapter(enumValueType.getEnumerated()));
@@ -96,9 +100,7 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         } else if(mViewType == SCALAR) {
             ScalarPropertyViewHolder scalarHolder = (ScalarPropertyViewHolder) holder;
 
-            // Set title
             scalarHolder.scalarTitle.setText(mCurrentProperty.getName());
-            // Set seek bar
             ScalarValueType scalarValueType = mConfigEntity.getScalarByID(mCurrentProperty.getRefValueType());
             scalarHolder.scalarMin.setText(scalarValueType.getMinValue());
             scalarHolder.scalarMax.setText(scalarValueType.getMaxValue());
@@ -139,28 +141,62 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         return mPropertyValueResponses.size();
     }
 
+    /**
+     * The type Enum property view holder.
+     */
     public class EnumPropertyViewHolder extends RecyclerView.ViewHolder {
+        /**
+         * The Enum title.
+         */
         @BindView(R.id.enum_title)
         TextView enumTitle;
+        /**
+         * The Enum selection list.
+         */
         @BindView(R.id.enum_selection_view)
         RecyclerView enumSelectionList;
 
+        /**
+         * Instantiates a new Enum property view holder.
+         *
+         * @param view the view
+         */
         public EnumPropertyViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }
     }
 
+    /**
+     * The type Scalar property view holder.
+     */
     public class ScalarPropertyViewHolder extends RecyclerView.ViewHolder {
+        /**
+         * The Scalar title.
+         */
         @BindView(R.id.scalar_title)
         TextView scalarTitle;
+        /**
+         * The Scalar max.
+         */
         @BindView(R.id.scalar_max)
         TextView scalarMax;
+        /**
+         * The Scalar min.
+         */
         @BindView(R.id.scalar_min)
         TextView scalarMin;
+        /**
+         * The Scalar seek bar.
+         */
         @BindView(R.id.scalar_seek_bar)
         SeekBar scalarSeekBar;
 
+        /**
+         * Instantiates a new Scalar property view holder.
+         *
+         * @param view the view
+         */
         public ScalarPropertyViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
@@ -168,12 +204,17 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     /**
-     * Enumerated Options Adapter
+     * The type Selectable options list view adapter.
      */
     public class SelectableOptionsListViewAdapter extends RecyclerView.Adapter<EnumeratedViewHolder> {
 
         private List<Enumerated> _enumeratedOptionsList;
 
+        /**
+         * Instantiates a new Selectable options list view adapter.
+         *
+         * @param enumeratedOptions the enumerated options
+         */
         public SelectableOptionsListViewAdapter(List<Enumerated> enumeratedOptions){
             _enumeratedOptionsList = enumeratedOptions;
         }
@@ -202,10 +243,21 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
     }
 
+    /**
+     * The type Enumerated view holder.
+     */
     public class EnumeratedViewHolder extends RecyclerView.ViewHolder{
+        /**
+         * The Enumerated text.
+         */
         @BindView(R.id.enumerated_rounded_checkbox)
         RadioButton enumeratedText;
 
+        /**
+         * Instantiates a new Enumerated view holder.
+         *
+         * @param view the view
+         */
         public EnumeratedViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);

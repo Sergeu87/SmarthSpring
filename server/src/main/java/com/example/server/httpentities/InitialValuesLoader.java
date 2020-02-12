@@ -10,14 +10,19 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created by isabelcosta on 23-May-17.
+ * Created by Serhii Razovyi on 10-Oct-19.
  */
-
 public class InitialValuesLoader {
 
     private static String _configFilesServerPackage = "./server/src/main/java/com/example/server/configs/";
     private static String _unicode = "UTF-8";
 
+    /**
+     * Gets device initial values.
+     *
+     * @param initialValuesFilename the initial values filename
+     * @return the device initial values
+     */
     public static ConcurrentHashMap<String, DeviceStateResponse> getDeviceInitialValues(String initialValuesFilename) {
 
         ConcurrentHashMap<String, DeviceStateResponse> devicesValues = new ConcurrentHashMap<>();

@@ -5,13 +5,17 @@ import android.support.annotation.NonNull;
 import com.example.utils.domain.HomeConfigEntity;
 
 /**
- * Created by isabelcosta on 10-May-17.
+ * Created by Serhii Razovyi on 05-Nov-19.
  */
-
 public class SplashPresenter implements SplashScreenContract.Presenter {
 
     private final SplashScreenContract.View mSplashView;
 
+    /**
+     * Instantiates a new Splash presenter.
+     *
+     * @param splashView the splash view
+     */
     public SplashPresenter(@NonNull SplashScreenContract.View splashView) {
 
         mSplashView = splashView;
@@ -27,11 +31,6 @@ public class SplashPresenter implements SplashScreenContract.Presenter {
     @Override
     public void loadHouseConfiguration(HomeConfigEntity homeConfigEntity) {
         mSplashView.showHouseConfigResult(homeConfigEntity);
-    }
-
-    @Override
-    public void cancelHouseConfigLoadTask() {
-        mSplashView.cancelLoadAsyncTask();
     }
 
     @Override

@@ -46,32 +46,54 @@ public class DivisionsFragment extends BaseFragment implements DivisionsContract
 
     private DivisionsAdapter mDivisionsAdapter;
 
+
     /**
-     * Views
+     * The Divisions grid view.
      */
     @BindView(R.id.divisions_grid_view)
     GridView divisionsGridView;
 
+    /**
+     * The M divisions view.
+     */
     @BindView(R.id.divisions_view)
     View mDivisionsView;
 
+    /**
+     * The M no divisions view.
+     */
     @BindView(R.id.empty_state_view)
     View mNoDivisionsView;
+    /**
+     * The M empty state icon.
+     */
     @BindView(R.id.empty_state_icon)
     ImageView mEmptyStateIcon;
+    /**
+     * The M empty state text.
+     */
     @BindView(R.id.empty_state_text)
     TextView mEmptyStateText;
 
+    /**
+     * The M loader.
+     */
     @BindView(R.id.divisions_loader_view)
     View mLoader;
 
+    /**
+     * The M container view.
+     */
     @BindView(R.id.divisions_container_view)
     View mContainerView;
 
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * Instantiates a new Divisions fragment.
+     */
     public DivisionsFragment() {
-        // Required empty public constructor
+
     }
 
     /**
@@ -91,7 +113,7 @@ public class DivisionsFragment extends BaseFragment implements DivisionsContract
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Create the presenter
+
         mDivisionsPresenter = new DivisionsPresenter(Injection.provideDivisionsRepository(getContext()), this);
 
         mDivisionsAdapter = new DivisionsAdapter(getContext(), mDivisionsPresenter, new ArrayList<Division>(0));
@@ -108,7 +130,7 @@ public class DivisionsFragment extends BaseFragment implements DivisionsContract
                              Bundle savedInstanceState) {
 //        super.onCreateView(inflater, container, savedInstanceState);
 
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_divisions, container, false);
         ButterKnife.bind(this, view);
 
@@ -162,9 +184,9 @@ public class DivisionsFragment extends BaseFragment implements DivisionsContract
     }
 
     @Override
-    public void showDivisions(List<Division> tasks) {
+    public void showDivisions(List<Division> divisions) {
 
-        mDivisionsAdapter.replaceData(tasks);
+        mDivisionsAdapter.replaceData(divisions);
 
         mDivisionsView.setVisibility(View.VISIBLE);
         mNoDivisionsView.setVisibility(View.GONE);

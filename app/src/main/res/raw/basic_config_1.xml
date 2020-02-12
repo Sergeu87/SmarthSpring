@@ -129,6 +129,18 @@
                 <DeviceService RefService="4" />
             </DeviceServiceList>
         </Device>
+        <Device ID="4" RefDeviceType="4" Name="Kitchen Lamp" Address="#0100" RefDivision="3" AccessLevel="3,5" UserBlocked="-,27">
+            <DeviceServiceList>
+                <DeviceService RefService="1" />
+                <DeviceService RefService="4" />
+            </DeviceServiceList>
+        </Device>
+        <Device ID="5" RefDeviceType="4" Name="Kitchen Lamp" Address="#0100" RefDivision="4" AccessLevel="3,5" UserBlocked="-,27">
+            <DeviceServiceList>
+                <DeviceService RefService="1" />
+                <DeviceService RefService="4" />
+            </DeviceServiceList>
+        </Device>
     </DeviceList>
 
     <!-- ################################# ADDITIONAL ##################################### -->

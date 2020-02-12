@@ -14,6 +14,9 @@ public class ActivityUtils {
      * The {@code fragment} is added to the container view with id {@code frameId}. The operation is
      * performed by the {@code fragmentManager}.
      *
+     * @param fragmentManager the fragment manager
+     * @param fragment        the fragment
+     * @param frameId         the frame id
      */
     public static void addFragmentToActivity (@NonNull FragmentManager fragmentManager,
                                               @NonNull Fragment fragment, int frameId) {
@@ -23,6 +26,13 @@ public class ActivityUtils {
         transaction.commit();
     }
 
+    /**
+     * Replace fragment to activity.
+     *
+     * @param fragmentManager the fragment manager
+     * @param fragment        the fragment
+     * @param frameId         the frame id
+     */
     public static void replaceFragmentToActivity (@NonNull FragmentManager fragmentManager,
                                               @NonNull Fragment fragment, int frameId) {
 

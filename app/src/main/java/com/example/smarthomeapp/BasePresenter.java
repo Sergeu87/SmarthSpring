@@ -1,11 +1,13 @@
 package com.example.smarthomeapp;
 
 /**
- * Created by isabelcosta on 05-May-17.
+ * Created by Serhii Razovyi on 02-Nov-19.
  */
-
 public interface BasePresenter {
 
+    /**
+     * Start.
+     */
     void start();
 
 }

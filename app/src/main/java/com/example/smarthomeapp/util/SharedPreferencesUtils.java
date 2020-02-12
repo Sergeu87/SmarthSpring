@@ -5,15 +5,18 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 /**
- * Created by isabelcosta on 07-May-17.
- *
+ * Created by Serhii Razovyi on 02-Nov-19.
+ * <p>
  * This class contains helper methods to retrieve and write values from {@link SharedPreferences}.
  */
-
 public class SharedPreferencesUtils {
 
     /**
      * Helper method to retrieve a String value from {@link SharedPreferences}.
+     *
+     * @param context the context
+     * @param key     the key
+     * @return the string preference
      */
     public static String getStringPreference(Context context, String key) {
         String value = null;
@@ -26,6 +29,11 @@ public class SharedPreferencesUtils {
 
     /**
      * Helper method to write a String value to {@link SharedPreferences}.
+     *
+     * @param context the context
+     * @param key     the key
+     * @param value   the value
+     * @return the string preference
      */
     public static boolean setStringPreference(Context context, String key, String value) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -39,6 +47,11 @@ public class SharedPreferencesUtils {
 
     /**
      * Helper method to retrieve an integer value from {@link SharedPreferences}.
+     *
+     * @param context      the context
+     * @param key          the key
+     * @param defaultValue the default value
+     * @return the integer preference
      */
     public static int getIntegerPreference(Context context, String key, int defaultValue) {
         int value = defaultValue;
@@ -51,6 +64,11 @@ public class SharedPreferencesUtils {
 
     /**
      * Helper method to write an integer value to {@link SharedPreferences}.
+     *
+     * @param context the context
+     * @param key     the key
+     * @param value   the value
+     * @return the integer preference
      */
     public static boolean setIntegerPreference(Context context, String key, int value) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -64,6 +82,11 @@ public class SharedPreferencesUtils {
 
     /**
      * Helper method to retrieve a boolean value from {@link SharedPreferences}.
+     *
+     * @param context      the context
+     * @param key          the key
+     * @param defaultValue the default value
+     * @return the boolean preference
      */
     public static boolean getBooleanPreference(Context context, String key, boolean defaultValue) {
         boolean value = defaultValue;
@@ -76,6 +99,11 @@ public class SharedPreferencesUtils {
 
     /**
      * Helper method to write a boolean value to {@link SharedPreferences}.
+     *
+     * @param context the context
+     * @param key     the key
+     * @param value   the value
+     * @return the boolean preference
      */
     public static boolean setBooleanPreference(Context context, String key, boolean value) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);

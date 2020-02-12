@@ -5,13 +5,17 @@ import android.support.annotation.NonNull;
 import com.example.utils.domain.HomeConfigEntity;
 
 /**
- * Created by isabelcosta on 10-May-17.
+ * Created by Serhii Razovyi on 05-Nov-19.
  */
-
 public class LoginPresenter implements LoginContract.Presenter {
 
     private final LoginContract.View mLoginView;
 
+    /**
+     * Instantiates a new Login presenter.
+     *
+     * @param loginView the login view
+     */
     public LoginPresenter(@NonNull LoginContract.View loginView) {
 
         mLoginView = loginView;
@@ -27,11 +31,6 @@ public class LoginPresenter implements LoginContract.Presenter {
     @Override
     public void loadHouseConfiguration(HomeConfigEntity homeConfigEntity) {
         mLoginView.showHouseConfigResult(homeConfigEntity);
-    }
-
-    @Override
-    public void cancelHouseConfigLoadTask() {
-        mLoginView.cancelLoadAsyncTask();
     }
 
     @Override

@@ -29,14 +29,24 @@ public class SettingsFragment extends BaseFragment {
 
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * The M log out button.
+     */
     @BindView(R.id.log_out_selectable_area)
     View mLogOutButton;
 
+    /**
+     * Instantiates a new Settings fragment.
+     */
     public SettingsFragment() {
-        // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
+    /**
+     * New instance settings fragment.
+     *
+     * @return the settings fragment
+     */
+// TODO: Rename and change types and number of parameters
     public static SettingsFragment newInstance() {
         SettingsFragment fragment = new SettingsFragment();
         Bundle args = new Bundle();
@@ -53,7 +63,6 @@ public class SettingsFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         ButterKnife.bind(this, view);
 
@@ -64,13 +73,11 @@ public class SettingsFragment extends BaseFragment {
 
                 Intent mainIntent = new Intent(getContext(), LoginActivity.class);
 
-                /* Create an Intent that will start the Home Activity. */
                 SettingsFragment.this.startActivity(mainIntent);
                 getActivity().finish();
             }
         });
 
-        // Inflate the layout for this fragment
         return view;
     }
 

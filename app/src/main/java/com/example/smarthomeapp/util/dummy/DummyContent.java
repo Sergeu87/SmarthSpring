@@ -26,7 +26,6 @@ public class DummyContent {
     private static final int COUNT = 25;
 
     static {
-        // Add some sample items.
         for (int i = 1; i <= COUNT; i++) {
             addItem(createDummyItem(i));
         }
@@ -51,13 +50,29 @@ public class DummyContent {
     }
 
     /**
-     * A dummy item representing a piece of content.
+     * The type Dummy item.
      */
     public static class DummyItem {
+        /**
+         * The Id.
+         */
         public final String id;
+        /**
+         * The Content.
+         */
         public final String content;
+        /**
+         * The Details.
+         */
         public final String details;
 
+        /**
+         * Instantiates a new Dummy item.
+         *
+         * @param id      the id
+         * @param content the content
+         * @param details the details
+         */
         public DummyItem(String id, String content, String details) {
             this.id = id;
             this.content = content;

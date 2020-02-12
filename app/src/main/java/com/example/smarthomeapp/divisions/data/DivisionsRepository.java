@@ -9,9 +9,8 @@ import java.util.List;
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
 
 /**
- * Created by isabelcosta on 12-May-17.
+ * Created by Serhii Razovyi on 07-Nov-19.
  */
-
 public class DivisionsRepository implements DivisionsDataSource {
 
     private static DivisionsRepository INSTANCE = null;
@@ -28,6 +27,12 @@ public class DivisionsRepository implements DivisionsDataSource {
         mDivisionsRemoteDataSource = checkNotNull(divisionsRemoteDataSource);
     }
 
+    /**
+     * Gets instance.
+     *
+     * @param tasksRemoteDataSource the tasks remote data source
+     * @return the instance
+     */
     public static DivisionsRepository getInstance(DivisionsDataSource tasksRemoteDataSource) {
         if (INSTANCE == null) {
             INSTANCE = new DivisionsRepository(tasksRemoteDataSource);
@@ -35,6 +40,9 @@ public class DivisionsRepository implements DivisionsDataSource {
         return INSTANCE;
     }
 
+    /**
+     * Destroy instance.
+     */
     public static void destroyInstance() {
         INSTANCE = null;
     }

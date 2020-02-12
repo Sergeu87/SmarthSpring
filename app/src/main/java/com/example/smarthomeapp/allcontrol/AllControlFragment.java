@@ -28,21 +28,29 @@ import butterknife.ButterKnife;
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
 
 /**
- * Created by isabelcosta on 25-May-17.
+ * Created by Serhii Razovyi on 10-Nov-19.
  */
-
 public class AllControlFragment extends BaseFragment implements AllControlContract.View{
 
     private AllControlContract.Presenter mPresenter;
     private DevicesAdapter mAdapter;
     private List<DeviceStateResponse> _devicesStateList;
 
+    /**
+     * The M loader.
+     */
     @BindView(R.id.devices_loader_view)
     View mLoader;
 
+    /**
+     * The M container view.
+     */
     @BindView(R.id.devices_container_view)
     View mContainerView;
 
+    /**
+     * The M devices recycler view.
+     */
     @BindView(R.id.devices_list)
     RecyclerView mDevicesRecyclerView;
 
@@ -71,7 +79,7 @@ public class AllControlFragment extends BaseFragment implements AllControlContra
 
         List<DeviceStateResponse> devicesStateList = new ArrayList<>();
 
-        // Create the presenter
+
         mPresenter = new AllControlPresenter(
                 devicesStateList,
                 Injection.provideDevicesRepository(getContext()),
@@ -89,14 +97,14 @@ public class AllControlFragment extends BaseFragment implements AllControlContra
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-//        super.onCreateView(inflater, container, savedInstanceState);
+        super.onCreateView(inflater, container, savedInstanceState);
 
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_devices, container, false);
         ButterKnife.bind(this, view);
 
         mDevicesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        // Set the adapter
+
         mDevicesRecyclerView.setAdapter(mAdapter);
 
         return view;
@@ -115,7 +123,7 @@ public class AllControlFragment extends BaseFragment implements AllControlContra
 
     @Override
     public void showAllDevices(List<Device> devices, List<DeviceStateResponse> deviceStateResponses) {
-//        Toast.makeText(getContext(), "HALO  " + deviceStateResponses.size(), Toast.LENGTH_LONG).show();
+       Toast.makeText(getContext(), "HALO  " + deviceStateResponses.size(), Toast.LENGTH_LONG).show();
         mAdapter.replaceData(devices, deviceStateResponses);
     }
 

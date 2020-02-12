@@ -19,14 +19,20 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by isabelcosta on 07-Apr-17.
+ * Created by Serhii Razovyi on 20-Oct-19.
  */
-
 public class DivisionsAdapter extends BaseAdapter{
 
     private List<Division> mDivisionsList;
     private Context mContext;
 
+    /**
+     * Instantiates a new Divisions adapter.
+     *
+     * @param context       the context
+     * @param mPresenter    the m presenter
+     * @param divisionsList the divisions list
+     */
     public DivisionsAdapter(Context context, BasePresenter mPresenter, List<Division> divisionsList){
         this.mDivisionsList = divisionsList;
         this.mContext = context;
@@ -58,7 +64,7 @@ public class DivisionsAdapter extends BaseAdapter{
         } else {
             LayoutInflater inflater = LayoutInflater.from(mContext);
 
-            // get layout from division_item.xml
+            // pobierz układ z division_item.xml
             convertView = inflater.inflate(R.layout.division_item, parent, false);
             holder = new DivisionsViewHolder(convertView);
             convertView.setTag(holder);
@@ -72,6 +78,11 @@ public class DivisionsAdapter extends BaseAdapter{
         return convertView;
     }
 
+    /**
+     * Replace data.
+     *
+     * @param divisions the divisions
+     */
     public void replaceData(List<Division> divisions) {
         setList(divisions);
         notifyDataSetChanged();
@@ -81,12 +92,26 @@ public class DivisionsAdapter extends BaseAdapter{
         mDivisionsList = divisions;
     }
 
+    /**
+     * The type Divisions view holder.
+     */
     public class DivisionsViewHolder {
+        /**
+         * The Division image.
+         */
         @BindView(R.id.division_image)
         ImageView divisionImage;
+        /**
+         * The Division text.
+         */
         @BindView(R.id.division_text)
         TextView divisionText;
 
+        /**
+         * Instantiates a new Divisions view holder.
+         *
+         * @param view the view
+         */
         public DivisionsViewHolder(View view) {
             ButterKnife.bind(this, view);
         }

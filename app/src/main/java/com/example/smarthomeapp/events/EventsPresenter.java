@@ -12,13 +12,17 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by isabelcosta on 12-May-17.
+ * Created by Serhii Razovyi on 07-Nov-19.
  */
-
 public class EventsPresenter implements EventsContract.Presenter {
 
     private EventsContract.View mEventsView;
 
+    /**
+     * Instantiates a new Events presenter.
+     *
+     * @param eventsView the events view
+     */
     public EventsPresenter(@NonNull EventsContract.View eventsView){
         mEventsView = eventsView;
         mEventsView.setPresenter(this);

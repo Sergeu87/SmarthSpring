@@ -8,17 +8,20 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by isabelcosta on 12-May-17.
+ * Created by Serhii Razovyi on 07-Nov-19.
  */
-
 public class RemoteUtils {
 
-    // Change IP Address
-    private static String SERVER_IP_ADDRESS = "192.168.1.14";
+    private static String SERVER_IP_ADDRESS = "192.168.0.101";
     private static String SERVER_PORT = "9000";
 
     private static String API_BASE_URL = "http://" + SERVER_IP_ADDRESS + ":" + SERVER_PORT + "/";
 
+    /**
+     * Get retrofit obj retrofit.
+     *
+     * @return the retrofit
+     */
     public static Retrofit getRetrofitObj(){
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);

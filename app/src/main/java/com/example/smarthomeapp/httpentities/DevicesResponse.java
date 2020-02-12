@@ -6,21 +6,38 @@ import android.os.Parcelable;
 import java.util.List;
 
 /**
- * Created by isabelcosta on 11-May-17.
+ * Created by Serhii Razovyi on 06-Nov-19.
  */
-
 public class DevicesResponse implements Parcelable {
 
+    /**
+     * The Devices values.
+     */
     public List<DeviceStateResponse> devicesValues;
 
+    /**
+     * Instantiates a new Devices response.
+     *
+     * @param devicesValues the devices values
+     */
     public DevicesResponse(List<DeviceStateResponse> devicesValues) {
         this.devicesValues = devicesValues;
     }
 
+    /**
+     * Gets devices values.
+     *
+     * @return the devices values
+     */
     public List<DeviceStateResponse> getDevicesValues() {
         return devicesValues;
     }
 
+    /**
+     * Sets devices values.
+     *
+     * @param devicesValues the devices values
+     */
     public void setDevicesValues(List<DeviceStateResponse> devicesValues) {
         this.devicesValues = devicesValues;
     }
@@ -35,10 +52,18 @@ public class DevicesResponse implements Parcelable {
         dest.writeTypedList(this.devicesValues);
     }
 
+    /**
+     * Instantiates a new Devices response.
+     *
+     * @param in the in
+     */
     protected DevicesResponse(Parcel in) {
         this.devicesValues = in.createTypedArrayList(DeviceStateResponse.CREATOR);
     }
 
+    /**
+     * The constant CREATOR.
+     */
     public static final Parcelable.Creator<DevicesResponse> CREATOR = new Parcelable.Creator<DevicesResponse>() {
         @Override
         public DevicesResponse createFromParcel(Parcel source) {
