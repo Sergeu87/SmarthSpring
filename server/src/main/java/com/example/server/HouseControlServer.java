@@ -1,6 +1,10 @@
 package com.example.server;
 
 
+import com.example.server.handlers.ConfigHandler;
+import com.example.server.handlers.DevicesHandler;
+import com.example.server.handlers.DivisionsHandler;
+import com.example.server.handlers.RootHandler;
 import com.example.server.handlers.UsersHandler;
 import com.example.server.httpentities.InitialValuesLoader;
 import com.example.utils.DomoBusConfigLoader;
@@ -106,15 +110,13 @@ public class HouseControlServer {
 			server = HttpServer.create(new InetSocketAddress(port), 0);
 			System.out.println("Server started at " + port);
 
-			server.createContext("/", new HandlersOLD.RootHandler());
-			server.createContext("/echoHeader", new HandlersOLD.EchoHeaderHandler());
-			server.createContext("/echoGet", new HandlersOLD.EchoGetHandler());
-			server.createContext("/echoPost", new HandlersOLD.EchoPostHandler());
-			server.createContext("/devices", new HandlersOLD.DevicesHandler());
-			server.createContext("/divisions", new HandlersOLD.DivisionsHandler());
-			server.createContext("/events", new HandlersOLD.EventsHandler());
-			server.createContext("/overview", new HandlersOLD.OverviewHandler());
-			server.createContext("/config", new HandlersOLD.ConfigHandler());
+//			server.createContext("/echoHeader", new HandlersOLD.EchoHeaderHandler());
+//			server.createContext("/echoGet", new HandlersOLD.EchoGetHandler());
+//			server.createContext("/echoPost", new HandlersOLD.EchoPostHandler());
+			server.createContext("/devices", new RootHandler());
+			server.createContext("/devices", new DevicesHandler());
+			server.createContext("/divisions", new DivisionsHandler());
+			server.createContext("/config", new ConfigHandler());
 			server.createContext("/login", new UsersHandler());
 			server.setExecutor(null);
 			server.start();
