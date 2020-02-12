@@ -1,6 +1,7 @@
 package com.example.server;
 
 
+import com.example.server.handlers.UsersHandler;
 import com.example.server.httpentities.InitialValuesLoader;
 import com.example.utils.DomoBusConfigLoader;
 import com.example.utils.domain.HomeConfigEntity;
@@ -12,7 +13,6 @@ import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -106,16 +106,16 @@ public class HouseControlServer {
 			server = HttpServer.create(new InetSocketAddress(port), 0);
 			System.out.println("Server started at " + port);
 
-			server.createContext("/", new Handlers.RootHandler());
-			server.createContext("/echoHeader", new Handlers.EchoHeaderHandler());
-			server.createContext("/echoGet", new Handlers.EchoGetHandler());
-			server.createContext("/echoPost", new Handlers.EchoPostHandler());
-			server.createContext("/devices", new Handlers.DevicesHandler());
-			server.createContext("/divisions", new Handlers.DivisionsHandler());
-			server.createContext("/events", new Handlers.EventsHandler());
-			server.createContext("/overview", new Handlers.OverviewHandler());
-			server.createContext("/config", new Handlers.ConfigHandler());
-			server.createContext("/login", new Handlers.UsersHandler());
+			server.createContext("/", new HandlersOLD.RootHandler());
+			server.createContext("/echoHeader", new HandlersOLD.EchoHeaderHandler());
+			server.createContext("/echoGet", new HandlersOLD.EchoGetHandler());
+			server.createContext("/echoPost", new HandlersOLD.EchoPostHandler());
+			server.createContext("/devices", new HandlersOLD.DevicesHandler());
+			server.createContext("/divisions", new HandlersOLD.DivisionsHandler());
+			server.createContext("/events", new HandlersOLD.EventsHandler());
+			server.createContext("/overview", new HandlersOLD.OverviewHandler());
+			server.createContext("/config", new HandlersOLD.ConfigHandler());
+			server.createContext("/login", new UsersHandler());
 			server.setExecutor(null);
 			server.start();
 		} catch (IOException e) {
