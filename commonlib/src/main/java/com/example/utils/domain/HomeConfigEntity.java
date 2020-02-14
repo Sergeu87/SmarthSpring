@@ -8,196 +8,95 @@ import java.util.List;
  */
 public class HomeConfigEntity {
 
+    private List<Device> deviceList;
+    private List<DeviceType> deviceTypeList;
+    private List<Service> serviceList;
+    private House house;
+    private List<Floor> floorList;
+    private List<Division> divisionList;
+    private List<DivisionType> divisionTypeList;
+    private List<User> userList;
+    private List<ScalarValueType> scalarValueList;
+    private List<EnumValueType> enumValueList;
 
-    private static HomeConfigEntity _instance;
-
-    private List<Device> _deviceList;
-    private List<DeviceType> _deviceTypeList;
-    private List<Service> _serviceList;
-    private House _house;
-    private List<Floor> _floorList;
-    private List<Division> _divisionList;
-    private List<DivisionType> _divisionTypeList;
-    private List<User> _userList;
-    private List<ScalarValueType> _scalarValueList;
-    private List<EnumValueType> _enumValueList;
-
-    /**
-     * Get instance home config entity.
-     *
-     * @return the home config entity
-     */
-    public static HomeConfigEntity getInstance(){
-        if (_instance == null){
-            return new HomeConfigEntity();
-        }
-        return _instance;
+    public List<Device> getDeviceList() {
+        return deviceList;
     }
 
-    /**
-     * Getters and Setters
-     *
-     * @return the devices list
-     */
-    public List<Device> getDevicesList() {
-        return _deviceList;
-    }
-
-    /**
-     * Gets service list.
-     *
-     * @return the service list
-     */
-    public List<Service> getServiceList() {
-        return _serviceList;
-    }
-
-    private House getHouse() {
-        return _house;
-    }
-
-    /**
-     * Gets floor list.
-     *
-     * @return the floor list
-     */
-    public List<Floor> getFloorList() {
-        return _floorList;
-    }
-
-    /**
-     * Gets scalar value type list.
-     *
-     * @return the scalar value type list
-     */
-    public List<ScalarValueType> getScalarValueTypeList() {
-        return _scalarValueList;
-    }
-
-    /**
-     * Set floor list.
-     *
-     * @param floorList the floor list
-     */
-    public void setFloorList(List<Floor> floorList){
-        _floorList = floorList;
-    }
-
-    /**
-     * Gets enum value list.
-     *
-     * @return the enum value list
-     */
-    public List<EnumValueType> getEnumValueList() {
-        return _enumValueList;
-    }
-
-    /**
-     * Sets enum value type list.
-     *
-     * @param enumValueList the enum value list
-     */
-    public void setEnumValueTypeList(List<EnumValueType> enumValueList) {
-        _enumValueList = enumValueList;
-    }
-
-    /**
-     * Set scalar value type list.
-     *
-     * @param scalarValueList the scalar value list
-     */
-    public void setScalarValueTypeList(List<ScalarValueType> scalarValueList){
-        _scalarValueList = scalarValueList;
-    }
-
-    /**
-     * Get division list list.
-     *
-     * @return the list
-     */
-    public List<Division> getDivisionList(){
-        return _divisionList;
-    }
-
-    /**
-     * Set division list.
-     *
-     * @param divisionList the division list
-     */
-    public void setDivisionList(List<Division> divisionList){
-        _divisionList = divisionList;
-    }
-
-    /**
-     * Set division type list.
-     *
-     * @param divisionTypeList the division type list
-     */
-    public void setDivisionTypeList(List<DivisionType> divisionTypeList){
-        _divisionTypeList = divisionTypeList;
-    }
-
-    /**
-     * Gets user list.
-     *
-     * @return the user list
-     */
-    public List<User> getUserList() {
-        return _userList;
-    }
-
-    /**
-     * Sets user list.
-     *
-     * @param userList the user list
-     */
-    public void setUserList(List<User> userList) {
-        this._userList = userList;
-    }
-
-    /**
-     * Sets device list.
-     *
-     * @param deviceList the device list
-     */
     public void setDeviceList(List<Device> deviceList) {
-        this._deviceList = deviceList;
+        this.deviceList = deviceList;
     }
 
-    /**
-     * Sets service list.
-     *
-     * @param serviceList the service list
-     */
-    public void setServiceList(List<Service> serviceList) {
-        this._serviceList = serviceList;
-    }
-
-    /**
-     * Sets house.
-     *
-     * @param house the house
-     */
-    public void setHouse(House house) {
-        this._house = house;
-    }
-
-    /**
-     * Gets device type list.
-     *
-     * @return the device type list
-     */
     public List<DeviceType> getDeviceTypeList() {
-        return _deviceTypeList;
+        return deviceTypeList;
     }
 
-    /**
-     * Sets device type list.
-     *
-     * @param deviceTypeList the device type list
-     */
     public void setDeviceTypeList(List<DeviceType> deviceTypeList) {
-        _deviceTypeList = deviceTypeList;
+        this.deviceTypeList = deviceTypeList;
+    }
+
+    public List<Service> getServiceList() {
+        return serviceList;
+    }
+
+    public void setServiceList(List<Service> serviceList) {
+        this.serviceList = serviceList;
+    }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+    public List<Floor> getFloorList() {
+        return floorList;
+    }
+
+    public void setFloorList(List<Floor> floorList) {
+        this.floorList = floorList;
+    }
+
+    public List<Division> getDivisionList() {
+        return divisionList;
+    }
+
+    public void setDivisionList(List<Division> divisionList) {
+        this.divisionList = divisionList;
+    }
+
+    public List<DivisionType> getDivisionTypeList() {
+        return divisionTypeList;
+    }
+
+    public void setDivisionTypeList(List<DivisionType> divisionTypeList) {
+        this.divisionTypeList = divisionTypeList;
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+
+    public List<ScalarValueType> getScalarValueList() {
+        return scalarValueList;
+    }
+
+    public void setScalarValueList(List<ScalarValueType> scalarValueList) {
+        this.scalarValueList = scalarValueList;
+    }
+
+    public List<EnumValueType> getEnumValueList() {
+        return enumValueList;
+    }
+
+    public void setEnumValueList(List<EnumValueType> enumValueList) {
+        this.enumValueList = enumValueList;
     }
 
     /**
@@ -207,7 +106,7 @@ public class HomeConfigEntity {
      * @return the user
      */
     public User getUserByID(String userID){
-        for(User user : _userList){
+        for(User user : userList){
             if(userID.equals(user.getId())){
                 return user;
             }
@@ -222,7 +121,7 @@ public class HomeConfigEntity {
      * @return the device
      */
     public Device getDeviceByID(String deviceID){
-        for(Device device : _deviceList){
+        for(Device device : deviceList){
             if(deviceID.equals(device.getId())){
                 return device;
             }
@@ -237,7 +136,7 @@ public class HomeConfigEntity {
      * @return the division
      */
     public Division getDivisionByID(String divisionID){
-        for(Division division : _divisionList){
+        for(Division division : divisionList){
             if(divisionID.equals(division.getId())){
                 return division;
             }
@@ -253,7 +152,7 @@ public class HomeConfigEntity {
      */
     public List<Device> getDevicesByDivisionID(String divisionID){
         List<Device> devicesList = new ArrayList<>();
-        for(Device device : _deviceList){
+        for(Device device : deviceList){
             if(device.getRefDivision().equals(divisionID)){
                 devicesList.add(device);
             }
@@ -268,7 +167,7 @@ public class HomeConfigEntity {
      * @return the device type
      */
     public DeviceType getDeviceTypeByID(String deviceTypeID){
-        for(DeviceType deviceType : _deviceTypeList){
+        for(DeviceType deviceType : deviceTypeList){
             if(deviceType.getId().equals(deviceTypeID)){
                 return deviceType;
             }
@@ -310,7 +209,7 @@ public class HomeConfigEntity {
      * @return the scalar value type
      */
     public ScalarValueType getScalarByID(String scalarID){
-        for(ScalarValueType scalarType : _scalarValueList){
+        for(ScalarValueType scalarType : scalarValueList){
             if(scalarType.getScalarId().equals(scalarID)){
                 return scalarType;
             }
@@ -325,7 +224,7 @@ public class HomeConfigEntity {
      * @return the enum value type
      */
     public EnumValueType getEnumByID(String enumID){
-        for(EnumValueType enumType : _enumValueList){
+        for(EnumValueType enumType : enumValueList){
             if(enumType.getEnumId().equals(enumID)){
                 return enumType;
             }

@@ -67,14 +67,6 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
      */
     private static final int REQUEST_READ_CONTACTS = 0;
 
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "hello:world", "hello2:world2"
-    };
-
     private HouseConfigService houseConfigService;
     private UserAuthService userAuthService;
     private LoginContract.Presenter mLoginPresenter;
@@ -110,11 +102,6 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
     @BindView(R.id.email_sign_in_button)
     Button mEmailSignInButton;
 
-    /**
-     * The M house config btn.
-     */
-    @BindView(R.id.load_house_config_button)
-    Button mHouseConfigBtn;
 
     /**
      * The M house config loader.
@@ -123,28 +110,10 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
     ProgressBar mHouseConfigLoader;
 
     /**
-     * The M house config loader check.
-     */
-    @BindView(R.id.load_xml_loader_check)
-    ImageView mHouseConfigLoaderCheck;
-
-    /**
      * The M house config loader error.
      */
     @BindView(R.id.load_xml_loader_error)
     ImageView mHouseConfigLoaderError;
-
-    /**
-     * The M remember me layout.
-     */
-    @BindView(R.id.remember_checkbox_layout)
-    View mRememberMeLayout;
-
-    /**
-     * The M remember me checkbox.
-     */
-    @BindView(R.id.remember_checkbox)
-    CheckBox mRememberMeCheckbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,25 +149,12 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
 
         mEmailSignInButton.setClickable(true);
 
-        mHouseConfigBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadHouseConfig();
-            }
-        });
-
-
-        mRememberMeLayout.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean isChecked = mRememberMeCheckbox.isChecked();
-                mRememberMeCheckbox.setChecked(!isChecked);
-            }
-        });
 
         Retrofit retrofit = RemoteUtils.getRetrofitObj();
         houseConfigService = retrofit.create(HouseConfigService.class);
         userAuthService = retrofit.create(UserAuthService.class);
+
+        loadHouseConfig();
     }
 
     @Override
@@ -298,7 +254,6 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
 
                     if (loggedUser != null) {
                         SmartHomeApplication.getInstance().setUserEntity(loggedUser);
-                        saveLoginData(loggedUser.getId(), mRememberMeCheckbox.isChecked());
 
                         Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
 
@@ -320,7 +275,6 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
 
     private void loadHouseConfig(){
         if (SmartHomeApplication.getInstance().getHomeConfiguration() != null) {
-            mHouseConfigLoaderCheck.setVisibility(View.VISIBLE);
             mEmailSignInButton.setClickable(true);
             Toast.makeText(this, "House is already loaded", Toast.LENGTH_LONG).show();
         } else {
@@ -450,7 +404,6 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
             SmartHomeApplication.getInstance().setHomeConfiguration(homeConfigEntity);
 
             mEmailSignInButton.setClickable(true);
-            mHouseConfigLoaderCheck.setVisibility(View.VISIBLE);
             Toast.makeText(LoginActivity.this, "House Load SUCCESSFUL", Toast.LENGTH_LONG).show();
         } else {
             mHouseConfigLoaderError.setVisibility(View.VISIBLE);

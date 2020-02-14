@@ -152,7 +152,7 @@ public class HouseControlServer {
 		if (homeConfig == null) {
 			System.out.println("!!! Error parsing the house configuration file! :( !!!");
 		} else {
-			houseControl.setHomeConfiguration(configLoader.getHomeConfig());
+			houseControl.setHomeConfiguration(homeConfig);
 
 			System.out.println("=> Starting HTTP Server ...");
 			houseControl.startServer(PORT);

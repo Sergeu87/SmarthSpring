@@ -67,12 +67,6 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
         super.onCreate(savedInstanceState);
 
         setListeners();
-
-//        if (savedInstanceState == null) {
-//            Fragment newFragment = DivisionsFragment.newInstance(null, null);
-//            FragmentTransaction ft = getFragmentManager().beginTransaction();
-//            ft.add(CONTENT_VIEW_ID, newFragment).commit();
-//        }
     }
 
     @Override

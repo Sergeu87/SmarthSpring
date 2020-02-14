@@ -75,43 +75,18 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:paddingTop="@dimen/remember_me_padding_top_bottom"
-                android:paddingBottom="@dimen/remember_me_padding_top_bottom"
-                android:paddingRight="@dimen/remember_me_padding_right_left"
-                android:paddingLeft="@dimen/remember_me_padding_right_left"
-                android:id="@+id/remember_checkbox_layout">
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/remember_checkbox"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/remember_me" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/email_sign_in_button"
-                style="@style/CustomButton"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/action_sign_in" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/load_house_config_button"
+                    android:id="@+id/email_sign_in_button"
                     style="@style/CustomButton"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/action_load_house_config"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/action_sign_in"
                     android:layout_centerInParent="true"/>
+
 
                 <ProgressBar
                     android:layout_width="wrap_content"
@@ -119,16 +94,8 @@
                     android:id="@+id/load_xml_loader"
                     android:layout_centerVertical="true"
                     android:visibility="gone"
-                    android:layout_toRightOf="@+id/load_house_config_button"/>
+                    android:layout_toRightOf="@+id/email_sign_in_button"/>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/load_xml_loader_check"
-                    android:layout_centerVertical="true"
-                    android:visibility="gone"
-                    android:src="@drawable/ic_check"
-                    android:layout_toRightOf="@+id/load_house_config_button"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -137,7 +104,7 @@
                     android:layout_centerVertical="true"
                     android:visibility="gone"
                     android:src="@drawable/ic_error_outline"
-                    android:layout_toRightOf="@+id/load_house_config_button"/>
+                    android:layout_toRightOf="@+id/email_sign_in_button"/>
             </RelativeLayout>
 
         </LinearLayout>

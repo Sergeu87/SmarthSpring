@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RemoteUtils {
 
-    private static String SERVER_IP_ADDRESS = "192.168.0.101";
+    private static String SERVER_IP_ADDRESS = "192.168.1.14";
     private static String SERVER_PORT = "9000";
 
     private static String API_BASE_URL = "http://" + SERVER_IP_ADDRESS + ":" + SERVER_PORT + "/";
@@ -26,18 +26,19 @@ public class RemoteUtils {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
-        httpClientBuilder.addInterceptor(interceptor).build();
-        Retrofit.Builder builder =
-                new Retrofit.Builder()
-                        .baseUrl(API_BASE_URL)
-                        .addConverterFactory(
-                                GsonConverterFactory.create()
-                        );
+        final OkHttpClient httpClient = new OkHttpClient.Builder()
+                .addInterceptor(interceptor)
+                .readTimeout(2, TimeUnit.SECONDS)
+                .connectTimeout(2, TimeUnit.SECONDS)
+                .writeTimeout(2, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(true)
+                .build();
 
-        OkHttpClient httpClient = httpClientBuilder.build();
-
-        Retrofit retrofit = builder.client(httpClient).build();
+        final Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(API_BASE_URL)
+                .client(httpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
         return retrofit;
     }

@@ -346,7 +346,7 @@ public class DomoBusConfigLoader {
             enumValueTypeList.add(evt);
         }
 
-        _homeConfig.setEnumValueTypeList(enumValueTypeList);
+        _homeConfig.setEnumValueList(enumValueTypeList);
     }
 
     private List<Enumerated> parseInnerEnumeratedList(List<Node> enumeratedNodes){
@@ -385,7 +385,7 @@ public class DomoBusConfigLoader {
             scalarValueTypeList.add(evt);
         }
 
-        _homeConfig.setScalarValueTypeList(scalarValueTypeList);
+        _homeConfig.setScalarValueList(scalarValueTypeList);
     }
 
     private ValueConversion getValueConversion(){

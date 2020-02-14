@@ -42,7 +42,7 @@ public class AllControlPresenter implements AllControlContract.Presenter {
         mLoadedDevicesList = SmartHomeApplication
                 .getInstance()
                 .getHomeConfiguration()
-                .getDevicesList();
+                .getDeviceList();
         mDevicesRepository = devicesRepository;
         mAllControlView = allControlView;
         mAllControlView.setPresenter(this);
@@ -74,7 +74,7 @@ public class AllControlPresenter implements AllControlContract.Presenter {
                 List<Device> devicesList = SmartHomeApplication
                         .getInstance()
                         .getHomeConfiguration()
-                        .getDevicesList();
+                        .getDeviceList();
                 mAllControlView.showAllDevices(devicesList, devicesState);
             }
 

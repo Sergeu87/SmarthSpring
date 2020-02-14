@@ -17,12 +17,12 @@ public class IconUtils {
     private static HashMap<String, Integer> devicesIconsMap = new HashMap<>();
 
     static {
-        divisionIconsMap.put(BEDROOM, R.drawable.ic_syp);
-        divisionIconsMap.put(KITCHEN, R.drawable.ic_kuch);
-        divisionIconsMap.put(BATHROOM, R.drawable.ic_laz);
+        divisionIconsMap.put(BEDROOM, R.drawable.ic_bed);
+        divisionIconsMap.put(KITCHEN, R.drawable.ic_bed);
+        divisionIconsMap.put(BATHROOM, R.drawable.ic_bed);
         divisionIconsMap.put(HALL, R.drawable.ic_bed);
         divisionIconsMap.put(ATTIC, R.drawable.ic_bed);
-        divisionIconsMap.put(LIVING_ROOM, R.drawable.ic_gos);
+        divisionIconsMap.put(LIVING_ROOM, R.drawable.ic_bed);
         divisionIconsMap.put(GARDEN, R.drawable.ic_bed);
 
         devicesIconsMap.put(ADJUSTABLE_LIGHT, R.drawable.ic_filament);
