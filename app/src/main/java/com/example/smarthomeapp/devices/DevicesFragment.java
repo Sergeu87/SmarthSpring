@@ -11,13 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.smarthomeapp.BaseFragment;
 import com.example.smarthomeapp.R;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
+import com.example.smarthomeapp.httpentities.DeviceState;
 import com.example.smarthomeapp.util.Injection;
-import com.example.utils.domain.Device;
+import com.example.smarthomeapp.model.Device;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -87,13 +86,13 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
      * this fragment using the provided parameters.
      *
      * @param divisionId           the division id
-     * @param deviceStateResponses the device state responses
+     * @param deviceStateRespons the device state responses
      * @return A new instance of fragment DivisionsFragment.
      */
-    public static DevicesFragment newInstance(String divisionId, List<DeviceStateResponse> deviceStateResponses) {
+    public static DevicesFragment newInstance(String divisionId, List<DeviceState> deviceStateRespons) {
         DevicesFragment fragment = new DevicesFragment();
         Bundle args = new Bundle();
-        args.putParcelableArrayList(DEVICES_STATES_ARG, new ArrayList<Parcelable>(deviceStateResponses));
+        args.putParcelableArrayList(DEVICES_STATES_ARG, new ArrayList<Parcelable>(deviceStateRespons));
         args.putString(DIVISION_ID_ARG, divisionId);
         fragment.setArguments(args);
         return fragment;
@@ -110,7 +109,7 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        List<DeviceStateResponse> devicesStateList = new ArrayList<>();
+        List<DeviceState> devicesStateList = new ArrayList<>();
         if (getArguments() != null) {
             devicesStateList = getArguments().getParcelableArrayList(DEVICES_STATES_ARG);
             mDivisionId = getArguments().getString(DIVISION_ID_ARG);
@@ -128,7 +127,7 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
                 getContext(),
                 mPresenter,
                 new LinkedList<Device>(),
-                new LinkedList<DeviceStateResponse>()
+                new LinkedList<DeviceState>()
         );
     }
 
@@ -162,9 +161,9 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
     }
 
     @Override
-    public void showDevices(List<Device> devices, List<DeviceStateResponse> deviceStateResponses) {
-//        Toast.makeText(getContext(), "HALO  " + deviceStateResponses.size(), Toast.LENGTH_LONG).show();
-        mAdapter.replaceData(devices, deviceStateResponses);
+    public void showDevices(List<Device> devices, List<DeviceState> deviceStateRespons) {
+//        Toast.makeText(getContext(), "HALO  " + deviceStateRespons.size(), Toast.LENGTH_LONG).show();
+        mAdapter.replaceData(devices, deviceStateRespons);
     }
 
     @Override

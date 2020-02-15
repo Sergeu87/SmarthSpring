@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 import com.example.smarthomeapp.app.SmartHomeApplication;
 import com.example.smarthomeapp.divisions.data.DivisionsDataSource;
 import com.example.smarthomeapp.divisions.data.DivisionsRepository;
-import com.example.utils.domain.Division;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
+import com.example.smarthomeapp.httpentities.DeviceState;
+import com.example.smarthomeapp.model.Division;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ public class DivisionsPresenter implements DivisionsContract.Presenter {
 
         final DivisionsDataSource.LoadDevicesCallback devicesCallback = new DivisionsDataSource.LoadDevicesCallback() {
             @Override
-            public void onDevicesLoaded(List<DeviceStateResponse> devices) {
+            public void onDevicesLoaded(List<DeviceState> devices) {
 
                 if (!mDivisionsView.isActive()) {
                     return;
@@ -66,7 +66,7 @@ public class DivisionsPresenter implements DivisionsContract.Presenter {
                 mDivisionsView.setLoadingIndicator(false);
 
 
-                mDivisionsView.showDivisionDevicesUi(divisionId, new ArrayList<DeviceStateResponse>());
+                mDivisionsView.showDivisionDevicesUi(divisionId, new ArrayList<DeviceState>());
             }
         };
         mDivisionsRepository.getDevices(divisionId, devicesCallback);

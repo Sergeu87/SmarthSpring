@@ -1,17 +1,11 @@
 package com.example.smarthomeapp.devices;
 
 import android.content.Context;
-import android.database.DataSetObserver;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -19,18 +13,16 @@ import android.widget.TextView;
 import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.app.SmartHomeApplication;
 import com.example.smarthomeapp.httpentities.PropertyValueResponse;
-import com.example.utils.HouseConfigConstants;
-import com.example.utils.domain.EnumValueType;
-import com.example.utils.domain.Enumerated;
-import com.example.utils.domain.HomeConfigEntity;
-import com.example.utils.domain.Property;
-import com.example.utils.domain.ScalarValueType;
-import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.example.smarthomeapp.model.EnumValueType;
+import com.example.smarthomeapp.model.Enumerated;
+import com.example.smarthomeapp.model.HomeConfigEntity;
+import com.example.smarthomeapp.model.Property;
+import com.example.smarthomeapp.model.ScalarValueType;
 
 /**
  * Created by Serhii Razovyi on 07-Nov-19.
@@ -118,10 +110,10 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         int viewType;
         switch (mCurrentProperty.getValueType()){
-            case HouseConfigConstants.ENUM:
+            case "ENUM":
                 viewType = ENUM;
                 break;
-            case HouseConfigConstants.SCALAR:
+            case "SCALAR":
                 viewType = SCALAR;
                 break;
             default:

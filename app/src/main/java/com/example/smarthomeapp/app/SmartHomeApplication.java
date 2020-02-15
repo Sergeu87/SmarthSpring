@@ -2,8 +2,8 @@ package com.example.smarthomeapp.app;
 
 import android.app.Application;
 
-import com.example.utils.domain.HomeConfigEntity;
-import com.example.utils.domain.User;
+import com.example.smarthomeapp.model.HomeConfigEntity;
+import com.example.smarthomeapp.model.User;
 
 /**
  * Created by Serhii Razovyi on 5-Nov-19.

@@ -2,10 +2,9 @@ package com.example.smarthomeapp.devices;
 
 import com.example.smarthomeapp.BasePresenter;
 import com.example.smarthomeapp.BaseView;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
-import com.example.utils.domain.Device;
+import com.example.smarthomeapp.httpentities.DeviceState;
+import com.example.smarthomeapp.model.Device;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +31,7 @@ public class DevicesContract {
          * @param devices      the devices
          * @param devicesState the devices state
          */
-        void showDevices(List<Device> devices, List<DeviceStateResponse> devicesState);
+        void showDevices(List<Device> devices, List<DeviceState> devicesState);
 
         /**
          * Show no devices.
@@ -75,7 +74,7 @@ public class DevicesContract {
          *
          * @param devicesValues the devices values
          */
-        void saveDeviceValue(Map<String,String> devicesValues);
+        void saveDeviceValue(DeviceState deviceState);
 
         /**
          * Load devices.

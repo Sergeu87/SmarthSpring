@@ -12,11 +12,9 @@ import android.widget.Toast;
 import com.example.smarthomeapp.BaseFragment;
 import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.devices.DevicesAdapter;
-import com.example.smarthomeapp.devices.DevicesContract;
-import com.example.smarthomeapp.devices.DevicesPresenter;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
+import com.example.smarthomeapp.httpentities.DeviceState;
 import com.example.smarthomeapp.util.Injection;
-import com.example.utils.domain.Device;
+import com.example.smarthomeapp.model.Device;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -34,7 +32,7 @@ public class AllControlFragment extends BaseFragment implements AllControlContra
 
     private AllControlContract.Presenter mPresenter;
     private DevicesAdapter mAdapter;
-    private List<DeviceStateResponse> _devicesStateList;
+    private List<DeviceState> _devicesStateList;
 
     /**
      * The M loader.
@@ -77,7 +75,7 @@ public class AllControlFragment extends BaseFragment implements AllControlContra
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        List<DeviceStateResponse> devicesStateList = new ArrayList<>();
+        List<DeviceState> devicesStateList = new ArrayList<>();
 
 
         mPresenter = new AllControlPresenter(
@@ -90,7 +88,7 @@ public class AllControlFragment extends BaseFragment implements AllControlContra
                 getContext(),
                 mPresenter,
                 new LinkedList<Device>(),
-                new LinkedList<DeviceStateResponse>()
+                new LinkedList<DeviceState>()
         );
     }
 
@@ -122,9 +120,9 @@ public class AllControlFragment extends BaseFragment implements AllControlContra
     }
 
     @Override
-    public void showAllDevices(List<Device> devices, List<DeviceStateResponse> deviceStateResponses) {
-       Toast.makeText(getContext(), "HALO  " + deviceStateResponses.size(), Toast.LENGTH_LONG).show();
-        mAdapter.replaceData(devices, deviceStateResponses);
+    public void showAllDevices(List<Device> devices, List<DeviceState> deviceStateRespons) {
+       Toast.makeText(getContext(), "HALO  " + deviceStateRespons.size(), Toast.LENGTH_LONG).show();
+        mAdapter.replaceData(devices, deviceStateRespons);
     }
 
     @Override

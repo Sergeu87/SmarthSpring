@@ -8,17 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.allcontrol.AllControlContract;
-import com.example.smarthomeapp.allcontrol.AllControlFragment;
 import com.example.smarthomeapp.app.SmartHomeApplication;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
+import com.example.smarthomeapp.httpentities.DeviceState;
 import com.example.smarthomeapp.util.IconUtils;
-import com.example.utils.domain.Device;
-import com.example.utils.domain.Division;
+import com.example.smarthomeapp.model.Device;
+import com.example.smarthomeapp.model.Division;
 
 import java.util.List;
 
@@ -31,7 +29,7 @@ import butterknife.ButterKnife;
 public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceViewHolder> {
 
     private List<Device> mDevicesList;
-    private List<DeviceStateResponse> mDevicesStateList;
+    private List<DeviceState> mDevicesStateList;
     private DevicesContract.Presenter mDevicesPresenter;
     private AllControlContract.Presenter mAllControlPresenter;
     private Context mContext;
@@ -48,7 +46,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
     public DevicesAdapter(Context context,
                           DevicesContract.Presenter presenter,
                           List<Device> devicesMap,
-                          List<DeviceStateResponse> devicesStateMap){
+                          List<DeviceState> devicesStateMap){
         this.mContext = context;
         this.mDevicesPresenter = presenter;
         this.mDevicesList = devicesMap;
@@ -67,7 +65,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
     public DevicesAdapter(Context context,
                           AllControlContract.Presenter presenter,
                           List<Device> devicesMap,
-                          List<DeviceStateResponse> devicesStateMap){
+                          List<DeviceState> devicesStateMap){
         this.mContext = context;
         this.mAllControlPresenter = presenter;
         this.mDevicesList = devicesMap;
@@ -88,7 +86,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
     @Override
     public void onBindViewHolder(DeviceViewHolder holder, int position) {
 
-        DeviceStateResponse deviceStateResponse = mDevicesStateList.get(position);
+        DeviceState deviceState = mDevicesStateList.get(position);
         Device device = mDevicesList.get(position);
 
         holder.deviceIcon.setImageResource(IconUtils.getDevicesIconsMap().get(device.getRefDeviceType()));
@@ -109,14 +107,17 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
                 new DevicePropertiesAdapter(
                         mContext,
                         device.getRefDeviceType(),
-                        deviceStateResponse.getValues()
+                        deviceState.getValues()
                 )
         );
 
         holder.saveValueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDevicesPresenter.saveDeviceValue(mDevicesPresenter.getDeviceValuesToSave());
+                final DeviceState request = new DeviceState();
+//                request.deviceId = ;
+//                request.values = ;
+                mDevicesPresenter.saveDeviceValue(request);
             }
         });
     }
@@ -132,12 +133,12 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
      * @param devices      the devices
      * @param devicesState the devices state
      */
-    public void replaceData(List<Device> devices, List<DeviceStateResponse> devicesState) {
+    public void replaceData(List<Device> devices, List<DeviceState> devicesState) {
         setDevicesStateList(devices, devicesState);
         this.notifyDataSetChanged();
     }
 
-    private void setDevicesStateList(List<Device> devices, List<DeviceStateResponse> devicesState) {
+    private void setDevicesStateList(List<Device> devices, List<DeviceState> devicesState) {
         mDevicesList.clear();
         mDevicesList.addAll(devices);
         mDevicesStateList.clear();

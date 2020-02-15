@@ -4,8 +4,8 @@ import com.example.smarthomeapp.BasePresenter;
 import com.example.smarthomeapp.BaseView;
 import com.example.smarthomeapp.HouseConfigLoadPresenter;
 import com.example.smarthomeapp.divisions.DivisionsContract;
-import com.example.utils.domain.Division;
-import com.example.utils.domain.HomeConfigEntity;
+import com.example.smarthomeapp.model.Division;
+import com.example.smarthomeapp.model.HomeConfigEntity;
 
 import java.util.List;
 

@@ -5,7 +5,7 @@ import com.example.server.HttpUtil;
 import com.example.server.httpentities.DeviceStateResponse;
 import com.example.utils.ServerConstants;
 import com.example.utils.Utils;
-import com.example.utils.domain.Device;
+import com.example.smarthomeapp.model.Device;
 import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;

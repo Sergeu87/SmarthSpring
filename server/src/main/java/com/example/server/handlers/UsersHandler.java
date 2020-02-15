@@ -3,7 +3,7 @@ package com.example.server.handlers;
 import com.example.server.HouseControlServer;
 import com.example.server.HttpUtil;
 import com.example.utils.ServerConstants;
-import com.example.utils.domain.User;
+import com.example.smarthomeapp.model.User;
 import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;

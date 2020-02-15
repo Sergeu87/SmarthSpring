@@ -3,22 +3,18 @@ package com.example.smarthomeapp.login;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.app.LoaderManager.LoaderCallbacks;
-
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -27,29 +23,28 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.BaseActivity;
 import com.example.smarthomeapp.MainActivity;
+import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.app.SmartHomeApplication;
 import com.example.smarthomeapp.util.Constants;
 import com.example.smarthomeapp.util.HouseConfigService;
 import com.example.smarthomeapp.util.RemoteUtils;
 import com.example.smarthomeapp.util.SharedPreferencesUtils;
 import com.example.smarthomeapp.util.UserAuthService;
-import com.example.utils.domain.HomeConfigEntity;
-import com.example.utils.domain.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
+import com.example.smarthomeapp.model.HomeConfigEntity;
+import com.example.smarthomeapp.model.User;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -207,7 +202,6 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
 
 
     /**
-     *
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
@@ -273,7 +267,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
         }
     }
 
-    private void loadHouseConfig(){
+    private void loadHouseConfig() {
         if (SmartHomeApplication.getInstance().getHomeConfiguration() != null) {
             mEmailSignInButton.setClickable(true);
             Toast.makeText(this, "House is already loaded", Toast.LENGTH_LONG).show();
@@ -308,7 +302,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
     }
 
 
-    private void saveLoginData(String userId, boolean rememberMe){
+    private void saveLoginData(String userId, boolean rememberMe) {
         SharedPreferencesUtils.setStringPreference(getBaseContext(), Constants.Login.USER_ID, userId);
         SharedPreferencesUtils.setBooleanPreference(getBaseContext(), Constants.Login.REMEMBER_ME, rememberMe);
     }

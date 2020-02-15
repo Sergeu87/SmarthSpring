@@ -2,10 +2,7 @@ package com.example.smarthomeapp.devices.data;
 
 import android.support.annotation.NonNull;
 
-import com.example.smarthomeapp.divisions.data.DivisionsDataSource;
-import com.example.smarthomeapp.divisions.data.DivisionsRepository;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
-import com.example.utils.domain.Device;
+import com.example.smarthomeapp.httpentities.DeviceState;
 
 import java.util.List;
 import java.util.Map;
@@ -57,8 +54,8 @@ public class DevicesRepository implements DevicesDataSource{
 
         mDevicesRemoteDataSource.getAllDevices(new LoadDevicesCallback() {
             @Override
-            public void onDevicesLoaded(List<DeviceStateResponse> deviceStateResponses) {
-                callback.onDevicesLoaded(deviceStateResponses);
+            public void onDevicesLoaded(List<DeviceState> deviceStateRespons) {
+                callback.onDevicesLoaded(deviceStateRespons);
             }
 
             @Override

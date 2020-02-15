@@ -8,7 +8,7 @@ import com.example.server.handlers.RootHandler;
 import com.example.server.handlers.UsersHandler;
 import com.example.server.httpentities.InitialValuesLoader;
 import com.example.utils.DomoBusConfigLoader;
-import com.example.utils.domain.HomeConfigEntity;
+import com.example.smarthomeapp.model.HomeConfigEntity;
 import com.example.server.httpentities.DeviceStateResponse;
 import com.sun.net.httpserver.HttpServer;
 

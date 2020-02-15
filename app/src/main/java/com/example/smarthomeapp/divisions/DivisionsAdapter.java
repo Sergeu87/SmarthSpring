@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.smarthomeapp.BasePresenter;
 import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.util.IconUtils;
-import com.example.utils.domain.Division;
+import com.example.smarthomeapp.model.Division;
 
 import java.util.List;
 

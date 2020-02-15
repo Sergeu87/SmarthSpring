@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.smarthomeapp"
+        applicationId "pl.wsinf.smarthome.app"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
@@ -20,11 +20,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile project(':commonlib')
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:animated-vector-drawable:25.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

@@ -1,20 +1,13 @@
 package com.example.smarthomeapp.devices;
 
-import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 
-import com.example.smarthomeapp.allcontrol.AllControlContract;
 import com.example.smarthomeapp.app.SmartHomeApplication;
 import com.example.smarthomeapp.devices.data.DevicesDataSource;
 import com.example.smarthomeapp.devices.data.DevicesRepository;
-import com.example.smarthomeapp.divisions.DivisionsContract;
-import com.example.smarthomeapp.divisions.data.DivisionsRepository;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
-import com.example.utils.domain.Device;
-import com.example.utils.domain.Division;
+import com.example.smarthomeapp.httpentities.DeviceState;
+import com.example.smarthomeapp.model.Device;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -29,25 +22,25 @@ public class DevicesPresenter implements DevicesContract.Presenter{
 
     private Map<String, String> mDevicesValuesToSave;
 
-    private List<DeviceStateResponse> mDevicesStateResponsesList;
+    private List<DeviceState> mDevicesStateResponsesList;
     private List<Device> mLoadedDevicesList;
     private List<Device> mDevicesList = new LinkedList<>();
-    private List<DeviceStateResponse> mDevicesStateList = new LinkedList<>();
+    private List<DeviceState> mDevicesStateList = new LinkedList<>();
 
     /**
      * Instantiates a new Devices presenter.
      *
-     * @param deviceStateResponses the device state responses
+     * @param deviceStateRespons the device state responses
      * @param devicesRepository    the devices repository
      * @param devicesView          the devices view
      * @param divisionId           the division id
      */
-    public DevicesPresenter(List<DeviceStateResponse> deviceStateResponses,
+    public DevicesPresenter(List<DeviceState> deviceStateRespons,
                             @NonNull DevicesRepository devicesRepository,
                             @NonNull DevicesContract.View devicesView,
                             String divisionId) {
 
-        mDevicesStateResponsesList = deviceStateResponses;
+        mDevicesStateResponsesList = deviceStateRespons;
         mLoadedDevicesList = SmartHomeApplication
                 .getInstance()
                 .getHomeConfiguration()
@@ -108,7 +101,7 @@ public class DevicesPresenter implements DevicesContract.Presenter{
 
     private void indexDevicesAndStates(){
 
-        for(DeviceStateResponse state : mDevicesStateResponsesList){
+        for(DeviceState state : mDevicesStateResponsesList){
             String id = state.getDeviceId();
             mDevicesStateList.add(state);
 

@@ -16,8 +16,8 @@ import com.example.smarthomeapp.app.SmartHomeApplication;
 import com.example.smarthomeapp.login.LoginActivity;
 import com.example.smarthomeapp.util.Constants;
 import com.example.smarthomeapp.util.SharedPreferencesUtils;
-import com.example.utils.domain.HomeConfigEntity;
-import com.example.utils.domain.User;
+import com.example.smarthomeapp.model.HomeConfigEntity;
+import com.example.smarthomeapp.model.User;
 
 import butterknife.BindView;
 

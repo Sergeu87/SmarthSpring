@@ -2,8 +2,8 @@ package com.example.smarthomeapp.divisions;
 
 import com.example.smarthomeapp.BasePresenter;
 import com.example.smarthomeapp.BaseView;
-import com.example.utils.domain.Division;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
+import com.example.smarthomeapp.httpentities.DeviceState;
+import com.example.smarthomeapp.model.Division;
 
 import java.util.List;
 
@@ -37,7 +37,7 @@ public interface DivisionsContract {
          * @param divisionId the division id
          * @param devices    the devices
          */
-        void showDivisionDevicesUi(String divisionId, List<DeviceStateResponse> devices);
+        void showDivisionDevicesUi(String divisionId, List<DeviceState> devices);
 
         /**
          * Show no divisions.

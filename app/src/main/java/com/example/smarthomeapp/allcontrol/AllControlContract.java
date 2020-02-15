@@ -2,9 +2,8 @@ package com.example.smarthomeapp.allcontrol;
 
 import com.example.smarthomeapp.BasePresenter;
 import com.example.smarthomeapp.BaseView;
-import com.example.smarthomeapp.devices.DevicesContract;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
-import com.example.utils.domain.Device;
+import com.example.smarthomeapp.httpentities.DeviceState;
+import com.example.smarthomeapp.model.Device;
 
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class AllControlContract {
          * @param devices      the devices
          * @param devicesState the devices state
          */
-        void showAllDevices(List<Device> devices, List<DeviceStateResponse> devicesState);
+        void showAllDevices(List<Device> devices, List<DeviceState> devicesState);
 
         /**
          * Show no devices.

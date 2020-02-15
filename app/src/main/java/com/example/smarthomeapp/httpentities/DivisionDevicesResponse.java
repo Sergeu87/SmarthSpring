@@ -7,5 +7,5 @@ import java.util.List;
  */
 public class DivisionDevicesResponse {
 
-    private List<DeviceStateResponse> myDevices;
+    private List<DeviceState> myDevices;
 }

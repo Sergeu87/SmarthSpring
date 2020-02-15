@@ -8,11 +8,6 @@ import com.example.smarthomeapp.R;
 public class Constants {
 
     /**
-     * The constant XML_FILE_TO_LOAD.
-     */
-    public static int XML_FILE_TO_LOAD = R.raw.basic_config_1;
-
-    /**
      * The interface Division icon type.
      */
     interface DivisionIconType {

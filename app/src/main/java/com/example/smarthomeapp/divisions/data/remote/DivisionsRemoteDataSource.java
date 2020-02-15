@@ -3,8 +3,8 @@ package com.example.smarthomeapp.divisions.data.remote;
 import android.support.annotation.NonNull;
 
 import com.example.smarthomeapp.divisions.data.DivisionsDataSource;
+import com.example.smarthomeapp.httpentities.DeviceState;
 import com.example.smarthomeapp.util.RemoteUtils;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
 
 import java.util.List;
 
@@ -50,19 +50,19 @@ public class DivisionsRemoteDataSource implements DivisionsDataSource{
     @Override
     public void getDevices(String divisionId, @NonNull final LoadDevicesCallback callback) {
 
-        Call<List<DeviceStateResponse>> devicesCall = _service.getDevicesByDivision(divisionId);
+        Call<List<DeviceState>> devicesCall = _service.getDevicesByDivision(divisionId);
 
 
-        devicesCall.enqueue(new Callback<List<DeviceStateResponse>>() {
+        devicesCall.enqueue(new Callback<List<DeviceState>>() {
             @Override
-            public void onResponse(Call<List<DeviceStateResponse>> call, Response<List<DeviceStateResponse>> response) {
+            public void onResponse(Call<List<DeviceState>> call, Response<List<DeviceState>> response) {
 
-                List<DeviceStateResponse> devices = response.body();
+                List<DeviceState> devices = response.body();
                 callback.onDevicesLoaded(devices);
             }
 
             @Override
-            public void onFailure(Call<List<DeviceStateResponse>> call, Throwable t) {
+            public void onFailure(Call<List<DeviceState>> call, Throwable t) {
 
                 callback.onDataNotAvailable();
             }

@@ -1,6 +1,6 @@
 package com.example.smarthomeapp.util;
 
-import com.example.utils.domain.HomeConfigEntity;
+import com.example.smarthomeapp.model.HomeConfigEntity;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

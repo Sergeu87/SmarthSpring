@@ -13,14 +13,14 @@ public class DevicesResponse implements Parcelable {
     /**
      * The Devices values.
      */
-    public List<DeviceStateResponse> devicesValues;
+    public List<DeviceState> devicesValues;
 
     /**
      * Instantiates a new Devices response.
      *
      * @param devicesValues the devices values
      */
-    public DevicesResponse(List<DeviceStateResponse> devicesValues) {
+    public DevicesResponse(List<DeviceState> devicesValues) {
         this.devicesValues = devicesValues;
     }
 
@@ -29,7 +29,7 @@ public class DevicesResponse implements Parcelable {
      *
      * @return the devices values
      */
-    public List<DeviceStateResponse> getDevicesValues() {
+    public List<DeviceState> getDevicesValues() {
         return devicesValues;
     }
 
@@ -38,7 +38,7 @@ public class DevicesResponse implements Parcelable {
      *
      * @param devicesValues the devices values
      */
-    public void setDevicesValues(List<DeviceStateResponse> devicesValues) {
+    public void setDevicesValues(List<DeviceState> devicesValues) {
         this.devicesValues = devicesValues;
     }
 
@@ -58,7 +58,7 @@ public class DevicesResponse implements Parcelable {
      * @param in the in
      */
     protected DevicesResponse(Parcel in) {
-        this.devicesValues = in.createTypedArrayList(DeviceStateResponse.CREATOR);
+        this.devicesValues = in.createTypedArrayList(DeviceState.CREATOR);
     }
 
     /**

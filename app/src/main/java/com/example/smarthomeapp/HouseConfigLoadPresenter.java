@@ -1,6 +1,6 @@
 package com.example.smarthomeapp;
 
-import com.example.utils.domain.HomeConfigEntity;
+import com.example.smarthomeapp.model.HomeConfigEntity;
 
 /**
  * Created by Serhii Razovyi on 05-Nov-19.

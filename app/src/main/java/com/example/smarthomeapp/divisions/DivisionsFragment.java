@@ -11,18 +11,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.smarthomeapp.MainActivity;
 import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.BaseFragment;
 import com.example.smarthomeapp.devices.DevicesFragment;
-import com.example.smarthomeapp.util.ActivityUtils;
+import com.example.smarthomeapp.httpentities.DeviceState;
 import com.example.smarthomeapp.util.Injection;
-import com.example.utils.domain.Division;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
+import com.example.smarthomeapp.model.Division;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -193,7 +190,7 @@ public class DivisionsFragment extends BaseFragment implements DivisionsContract
     }
 
     @Override
-    public void showDivisionDevicesUi(String divisionId, List<DeviceStateResponse> devices) {
+    public void showDivisionDevicesUi(String divisionId, List<DeviceState> devices) {
         ((MainActivity) getActivity()).replaceFragment(DevicesFragment.newInstance(divisionId, devices), R.string.header_devices);
     }
 

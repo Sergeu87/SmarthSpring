@@ -3,7 +3,7 @@ package com.example.smarthomeapp.splash;
 import com.example.smarthomeapp.BaseView;
 import com.example.smarthomeapp.HouseConfigLoadPresenter;
 import com.example.smarthomeapp.login.LoginContract;
-import com.example.utils.domain.HomeConfigEntity;
+import com.example.smarthomeapp.model.HomeConfigEntity;
 
 /**
  * Created by Serhii Razovyi on 05-Nov-19.

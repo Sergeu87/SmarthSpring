@@ -3,16 +3,14 @@ package com.example.smarthomeapp.allcontrol;
 import android.support.annotation.NonNull;
 
 import com.example.smarthomeapp.app.SmartHomeApplication;
-import com.example.smarthomeapp.devices.DevicesContract;
 import com.example.smarthomeapp.devices.data.DevicesDataSource;
 import com.example.smarthomeapp.devices.data.DevicesRepository;
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
-import com.example.utils.domain.Device;
+import com.example.smarthomeapp.httpentities.DeviceState;
+import com.example.smarthomeapp.model.Device;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Serhii Razovyi on 10-Nov-19.
@@ -22,23 +20,23 @@ public class AllControlPresenter implements AllControlContract.Presenter {
     private final DevicesRepository mDevicesRepository;
     private final AllControlContract.View mAllControlView;
 
-    private List<DeviceStateResponse> mDevicesStateResponsesList;
+    private List<DeviceState> mDevicesStateResponsesList;
     private List<Device> mLoadedDevicesList;
     private List<Device> mDevicesList = new LinkedList<>();
-    private List<DeviceStateResponse> mDevicesStateList = new LinkedList<>();
+    private List<DeviceState> mDevicesStateList = new LinkedList<>();
 
 
     /**
      * Instantiates a new All control presenter.
      *
-     * @param deviceStateResponses the device state responses
+     * @param deviceStateRespons the device state responses
      * @param devicesRepository    the devices repository
      * @param allControlView       the all control view
      */
-    public AllControlPresenter(List<DeviceStateResponse> deviceStateResponses,
+    public AllControlPresenter(List<DeviceState> deviceStateRespons,
                                @NonNull DevicesRepository devicesRepository,
                                @NonNull AllControlContract.View allControlView){
-        mDevicesStateResponsesList = deviceStateResponses;
+        mDevicesStateResponsesList = deviceStateRespons;
         mLoadedDevicesList = SmartHomeApplication
                 .getInstance()
                 .getHomeConfiguration()
@@ -65,7 +63,7 @@ public class AllControlPresenter implements AllControlContract.Presenter {
 
         mDevicesRepository.getAllDevices(new DevicesDataSource.LoadDevicesCallback() {
             @Override
-            public void onDevicesLoaded(List<DeviceStateResponse> devicesState) {
+            public void onDevicesLoaded(List<DeviceState> devicesState) {
 
                 if (!mAllControlView.isActive()) {
                     return;
@@ -83,7 +81,7 @@ public class AllControlPresenter implements AllControlContract.Presenter {
                 mAllControlView.setLoadingIndicator(false);
 
 
-                mAllControlView.showAllDevices(new ArrayList<Device>(), new ArrayList<DeviceStateResponse>());
+                mAllControlView.showAllDevices(new ArrayList<Device>(), new ArrayList<DeviceState>());
             }
         });
 
@@ -94,7 +92,7 @@ public class AllControlPresenter implements AllControlContract.Presenter {
 
     private void indexDevicesAndStates(){
 
-        for(DeviceStateResponse state : mDevicesStateResponsesList){
+        for(DeviceState state : mDevicesStateResponsesList){
             String id = state.getDeviceId();
             mDevicesStateList.add(state);
 

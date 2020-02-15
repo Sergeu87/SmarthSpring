@@ -2,7 +2,7 @@ package com.example.smarthomeapp.divisions.data;
 
 import android.support.annotation.NonNull;
 
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
+import com.example.smarthomeapp.httpentities.DeviceState;
 
 import java.util.List;
 
@@ -53,8 +53,8 @@ public class DivisionsRepository implements DivisionsDataSource {
 
         mDivisionsRemoteDataSource.getDevices(divisionId, new LoadDevicesCallback() {
             @Override
-            public void onDevicesLoaded(List<DeviceStateResponse> deviceStateResponses) {
-                callback.onDevicesLoaded(deviceStateResponses);
+            public void onDevicesLoaded(List<DeviceState> deviceStateRespons) {
+                callback.onDevicesLoaded(deviceStateRespons);
             }
 
             @Override

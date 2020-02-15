@@ -1,6 +1,6 @@
 package com.example.smarthomeapp.divisions.data.remote;
 
-import com.example.smarthomeapp.httpentities.DeviceStateResponse;
+import com.example.smarthomeapp.httpentities.DeviceState;
 
 import java.util.List;
 
@@ -20,5 +20,5 @@ public interface DivisionsService {
      * @return the devices by division
      */
     @GET("divisions/{id}/devices")
-    Call<List<DeviceStateResponse>> getDevicesByDivision(@Path("id") String id);
+    Call<List<DeviceState>> getDevicesByDivision(@Path("id") String id);
 }
