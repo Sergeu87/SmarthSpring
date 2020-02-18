@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
@@ -240,6 +241,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
         } else {
             showProgress(true);
 
+            final Context activityContext = this.getApplicationContext();
             userAuthService.login(email, password).enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
@@ -247,21 +249,25 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
                     showProgress(false);
 
                     if (loggedUser != null) {
+                        Toast.makeText(activityContext, "Success login", Toast.LENGTH_LONG).show();
                         SmartHomeApplication.getInstance().setUserEntity(loggedUser);
-
                         Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-
                         LoginActivity.this.startActivity(mainIntent);
                         finish();
                     } else {
-                        mPasswordView.setError(getString(R.string.error_incorrect_password));
-                        mPasswordView.requestFocus();
+
                     }
                 }
 
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
-                    //TODO check errors
+//                    implement this on server, send error message
+//                    if (t.getMessage().equals("wrong_password")) {
+//                        Toast.makeText(activityContext, "Wrong password", Toast.LENGTH_LONG).show();
+//                        mPasswordView.setError(getString(R.string.error_incorrect_password));
+//                        mPasswordView.requestFocus();
+//                    }
+                    Toast.makeText(activityContext, "Login failed: " + t.getMessage(), Toast.LENGTH_LONG).show();
                 }
             });
         }
@@ -283,8 +289,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
 
                 @Override
                 public void onFailure(Call<HomeConfigEntity> call, Throwable t) {
-                    String errorMessage = t.getMessage();
-//                    Toast.makeText(this, "Could not load House config from remote server", Toast.LENGTH_LONG).show();
+                    showHouseConfigResult(null);
                 }
             });
         }

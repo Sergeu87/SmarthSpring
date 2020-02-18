@@ -76,18 +76,18 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
     @Override
     public DeviceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext())
+        final View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.device_item, parent, false);
 
-        DeviceViewHolder vh = new DeviceViewHolder(view);
-        return vh;
+        final DeviceViewHolder deviceViewHolder = new DeviceViewHolder(view);
+        return deviceViewHolder;
     }
 
     @Override
     public void onBindViewHolder(DeviceViewHolder holder, int position) {
 
-        DeviceState deviceState = mDevicesStateList.get(position);
-        Device device = mDevicesList.get(position);
+        final DeviceState deviceState = mDevicesStateList.get(position);
+        final Device device = mDevicesList.get(position);
 
         holder.deviceIcon.setImageResource(IconUtils.getDevicesIconsMap().get(device.getRefDeviceType()));
         holder.deviceName.setText(device.getName());
@@ -103,8 +103,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
         holder.deviceName.setText(device.getName());
 
         holder.propertiesList.setLayoutManager(new LinearLayoutManager(mContext));
-        holder.propertiesList.setAdapter(
-                new DevicePropertiesAdapter(
+        holder.propertiesList.setAdapter(new DevicePropertiesAdapter(
                         mContext,
                         device.getRefDeviceType(),
                         deviceState.getValues()

@@ -80,7 +80,7 @@ public class AllControlFragment extends BaseFragment implements AllControlContra
 
         mPresenter = new AllControlPresenter(
                 devicesStateList,
-                Injection.provideDevicesRepository(getContext()),
+                Injection.provideDevicesRepository(),
                 this
         );
 

@@ -1,8 +1,5 @@
 package com.example.smarthomeapp.util;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
-
 import com.example.smarthomeapp.devices.data.DevicesRepository;
 import com.example.smarthomeapp.devices.data.remote.DevicesRemoteDataSource;
 import com.example.smarthomeapp.divisions.data.DivisionsRepository;
@@ -16,20 +13,19 @@ public class Injection {
     /**
      * Provide divisions repository divisions repository.
      *
-     * @param context the context
      * @return the divisions repository
      */
-    public static DivisionsRepository provideDivisionsRepository(@NonNull Context context) {
+//    public static DivisionsRepository provideDivisionsRepository(@NonNull Context context) {
+    public static DivisionsRepository provideDivisionsRepository() {
         return DivisionsRepository.getInstance(DivisionsRemoteDataSource.getInstance());
     }
 
     /**
      * Provide devices repository devices repository.
      *
-     * @param context the context
      * @return the devices repository
      */
-    public static DevicesRepository provideDevicesRepository(@NonNull Context context) {
+    public static DevicesRepository provideDevicesRepository() {
         return DevicesRepository.getInstance(DevicesRemoteDataSource.getInstance());
     }
 

@@ -111,7 +111,7 @@ public class DivisionsFragment extends BaseFragment implements DivisionsContract
         super.onCreate(savedInstanceState);
 
 
-        mDivisionsPresenter = new DivisionsPresenter(Injection.provideDivisionsRepository(getContext()), this);
+        mDivisionsPresenter = new DivisionsPresenter(Injection.provideDivisionsRepository(), this);
 
         mDivisionsAdapter = new DivisionsAdapter(getContext(), mDivisionsPresenter, new ArrayList<Division>(0));
     }
@@ -190,8 +190,8 @@ public class DivisionsFragment extends BaseFragment implements DivisionsContract
     }
 
     @Override
-    public void showDivisionDevicesUi(String divisionId, List<DeviceState> devices) {
-        ((MainActivity) getActivity()).replaceFragment(DevicesFragment.newInstance(divisionId, devices), R.string.header_devices);
+    public void showDivisionDevicesUi(String divisionId, List<DeviceState> deviceStates) {
+        ((MainActivity) getActivity()).replaceFragment(DevicesFragment.newInstance(divisionId, deviceStates), R.string.header_devices);
     }
 
     @Override

@@ -22,7 +22,7 @@ public class DevicesPresenter implements DevicesContract.Presenter{
 
     private Map<String, String> mDevicesValuesToSave;
 
-    private List<DeviceState> mDevicesStateResponsesList;
+    private List<DeviceState> mDevicesStates;
     private List<Device> mLoadedDevicesList;
     private List<Device> mDevicesList = new LinkedList<>();
     private List<DeviceState> mDevicesStateList = new LinkedList<>();
@@ -40,7 +40,7 @@ public class DevicesPresenter implements DevicesContract.Presenter{
                             @NonNull DevicesContract.View devicesView,
                             String divisionId) {
 
-        mDevicesStateResponsesList = deviceStateRespons;
+        mDevicesStates = deviceStateRespons;
         mLoadedDevicesList = SmartHomeApplication
                 .getInstance()
                 .getHomeConfiguration()
@@ -61,10 +61,10 @@ public class DevicesPresenter implements DevicesContract.Presenter{
     }
 
     @Override
-    public void saveDeviceValue(Map<String,String> devicesValues) {
+    public void saveDeviceValue(DeviceState deviceState) {
         mDevicesView.setLoadingIndicator(true);
 
-        mDevicesRepository.updateDeviceValue(devicesValues, new DevicesDataSource.UpdateDeviceValueCallback(){
+        mDevicesRepository.updateDeviceValue(deviceState, new DevicesDataSource.UpdateDeviceValueCallback(){
 
             @Override
             public void onDeviceValueUpdated(boolean isUpdated) {
@@ -101,12 +101,12 @@ public class DevicesPresenter implements DevicesContract.Presenter{
 
     private void indexDevicesAndStates(){
 
-        for(DeviceState state : mDevicesStateResponsesList){
-            String id = state.getDeviceId();
-            mDevicesStateList.add(state);
+        for(DeviceState deviceState : mDevicesStates){
+            mDevicesStateList.add(deviceState);
 
+            final String deviceIdOfState = deviceState.getDeviceId();
             for(Device device : mLoadedDevicesList){
-                if (device.getId().equals(id)){
+                if (device.getId().equals(deviceIdOfState)){
                     mDevicesList.add(device);
                 }
             }

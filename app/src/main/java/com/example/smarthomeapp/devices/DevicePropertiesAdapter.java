@@ -7,22 +7,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.app.SmartHomeApplication;
 import com.example.smarthomeapp.httpentities.PropertyValueResponse;
-
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import com.example.smarthomeapp.model.EnumValueType;
 import com.example.smarthomeapp.model.Enumerated;
 import com.example.smarthomeapp.model.HomeConfigEntity;
 import com.example.smarthomeapp.model.Property;
 import com.example.smarthomeapp.model.ScalarValueType;
+
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Serhii Razovyi on 07-Nov-19.
@@ -51,7 +52,7 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
             Context context,
             String deviceTypeId,
             List<PropertyValueResponse> propertyValueResponses
-    ){
+    ) {
         mContext = context;
         mDeviceTypeId = deviceTypeId;
         mConfigEntity = SmartHomeApplication.getInstance().getHomeConfiguration();
@@ -62,41 +63,46 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view;
-        RecyclerView.ViewHolder vh = null;
+        RecyclerView.ViewHolder viewHolder = null;
 
         if (viewType == ENUM) {
             view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.property_enum, parent, false);
-            vh = new EnumPropertyViewHolder(view);
+            viewHolder = new EnumPropertyViewHolder(view);
 
-        } else if (viewType == SCALAR){
+        } else if (viewType == SCALAR) {
             view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.property_scalar, parent, false);
-            vh = new ScalarPropertyViewHolder(view);
+            viewHolder = new ScalarPropertyViewHolder(view);
         }
 
-        return vh;
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        if(mViewType == ENUM) {
+        if (mViewType == ENUM) {
             EnumPropertyViewHolder enumHolder = (EnumPropertyViewHolder) holder;
 
             enumHolder.enumTitle.setText(mCurrentProperty.getName());
-            EnumValueType enumValueType = mConfigEntity.getEnumByID(mCurrentProperty.getRefValueType());
+            final EnumValueType enumValueType = mConfigEntity.getEnumByID(mCurrentProperty.getRefValueType());
             enumHolder.enumSelectionList.setLayoutManager(new LinearLayoutManager(mContext));
-            enumHolder.enumSelectionList.setAdapter(new SelectableOptionsListViewAdapter(enumValueType.getEnumerated()));
+            final String propertyValue = mCurrentPropertyValueResponse.getPropertyValue();
+            enumHolder.enumSelectionList.setAdapter(new SelectableOptionsListViewAdapter(enumValueType.getEnumerated(), propertyValue));
 
-        } else if(mViewType == SCALAR) {
+
+        } else if (mViewType == SCALAR) {
             ScalarPropertyViewHolder scalarHolder = (ScalarPropertyViewHolder) holder;
 
             scalarHolder.scalarTitle.setText(mCurrentProperty.getName());
+
             ScalarValueType scalarValueType = mConfigEntity.getScalarByID(mCurrentProperty.getRefValueType());
             scalarHolder.scalarMin.setText(scalarValueType.getMinValue());
             scalarHolder.scalarMax.setText(scalarValueType.getMaxValue());
-//            scalarHolder.scalarSeekBar.setMax(Integer.getInteger(scalarValueType.getMaxValue()));
+
+            scalarHolder.scalarSeekBar.setMax(Integer.valueOf(scalarValueType.getMaxValue()));
+            scalarHolder.scalarSeekBar.setProgress(Integer.valueOf(mCurrentPropertyValueResponse.getPropertyValue()));
         }
     }
 
@@ -109,7 +115,7 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         );
 
         int viewType;
-        switch (mCurrentProperty.getValueType()){
+        switch (mCurrentProperty.getValueType()) {
             case "ENUM":
                 viewType = ENUM;
                 break;
@@ -201,27 +207,59 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
     public class SelectableOptionsListViewAdapter extends RecyclerView.Adapter<EnumeratedViewHolder> {
 
         private List<Enumerated> _enumeratedOptionsList;
+        private String selectedEnumValueAsString;
+        private RadioGroup radioGroup;
+        private boolean added;
 
         /**
          * Instantiates a new Selectable options list view adapter.
          *
          * @param enumeratedOptions the enumerated options
          */
-        public SelectableOptionsListViewAdapter(List<Enumerated> enumeratedOptions){
-            _enumeratedOptionsList = enumeratedOptions;
+        public SelectableOptionsListViewAdapter(List<Enumerated> enumeratedOptions, String selectedEnumValue) {
+            this._enumeratedOptionsList = enumeratedOptions;
+            this.selectedEnumValueAsString = selectedEnumValue;
+            this.radioGroup = new RadioGroup(mContext);
+
+            radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup radioGroup, int checkedItemIndex) {
+                }
+            });
         }
 
         @Override
         public EnumeratedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.enumerated_item, parent, false);
-            EnumeratedViewHolder vh = new EnumeratedViewHolder(view);
-            return vh;
+            final View view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.enumerated_item, parent, false);
+            final EnumeratedViewHolder enumeratedViewHolder = new EnumeratedViewHolder(view);
+            return enumeratedViewHolder;
         }
 
         @Override
         public void onBindViewHolder(EnumeratedViewHolder holder, int position) {
-            Enumerated enumerated = _enumeratedOptionsList.get(position);
-            holder.enumeratedText.setText(enumerated.getName());
+            final Enumerated enumerated = _enumeratedOptionsList.get(position);
+
+//            final RadioButton enumeratedRadioButton = new RadioButton(mContext);
+            final RadioButton enumeratedRadioButton = holder.enumeratedRadioButton;
+            enumeratedRadioButton.setText(enumerated.getName());
+            enumeratedRadioButton.setId(position);
+
+            final ViewGroup parent = (ViewGroup) enumeratedRadioButton.getParent();
+            if (parent != null) {
+                parent.removeView(enumeratedRadioButton);
+                if (!added) {
+                    parent.addView(radioGroup);
+                    added = true;
+                }
+
+            }
+            radioGroup.addView(enumeratedRadioButton);
+
+            if (enumerated.getName().equals(selectedEnumValueAsString)) {
+                radioGroup.clearCheck();
+                enumeratedRadioButton.setChecked(true);
+            }
         }
 
         @Override
@@ -243,7 +281,7 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
          * The Enumerated text.
          */
         @BindView(R.id.enumerated_rounded_checkbox)
-        RadioButton enumeratedText;
+        RadioButton enumeratedRadioButton;
 
         /**
          * Instantiates a new Enumerated view holder.

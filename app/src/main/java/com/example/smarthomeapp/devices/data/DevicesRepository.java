@@ -66,7 +66,7 @@ public class DevicesRepository implements DevicesDataSource{
     }
 
     @Override
-    public void updateDeviceValue(@NonNull Map<String,String> devicesValues, @NonNull UpdateDeviceValueCallback callback) {
-        mDevicesRemoteDataSource.updateDeviceValue(devicesValues, callback);
+    public void updateDeviceValue(@NonNull DeviceState deviceState, @NonNull UpdateDeviceValueCallback callback) {
+        mDevicesRemoteDataSource.updateDeviceValue(deviceState, callback);
     }
 }

@@ -16,7 +16,7 @@ import retrofit2.Retrofit;
 /**
  * Created by Serhii Razovyi on 07-Nov-19.
  */
-public class DivisionsRemoteDataSource implements DivisionsDataSource{
+public class DivisionsRemoteDataSource implements DivisionsDataSource {
 
     private static DivisionsRemoteDataSource INSTANCE;
     /**
@@ -42,18 +42,13 @@ public class DivisionsRemoteDataSource implements DivisionsDataSource{
 
 
     private DivisionsRemoteDataSource() {
-
-
         _service = _retrofit.create(DivisionsService.class);
     }
 
     @Override
     public void getDevices(String divisionId, @NonNull final LoadDevicesCallback callback) {
-
-        Call<List<DeviceState>> devicesCall = _service.getDevicesByDivision(divisionId);
-
-
-        devicesCall.enqueue(new Callback<List<DeviceState>>() {
+        _service.getDevicesByDivision(divisionId)
+                .enqueue(new Callback<List<DeviceState>>() {
             @Override
             public void onResponse(Call<List<DeviceState>> call, Response<List<DeviceState>> response) {
 
@@ -67,5 +62,7 @@ public class DivisionsRemoteDataSource implements DivisionsDataSource{
                 callback.onDataNotAvailable();
             }
         });
+
+
     }
 }

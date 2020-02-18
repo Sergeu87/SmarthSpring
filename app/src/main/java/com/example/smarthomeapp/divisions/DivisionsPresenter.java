@@ -50,15 +50,15 @@ public class DivisionsPresenter implements DivisionsContract.Presenter {
 
         final String divisionId = mDivisionsList.get(divisionPosition).getId();
 
-        final DivisionsDataSource.LoadDevicesCallback devicesCallback = new DivisionsDataSource.LoadDevicesCallback() {
+        mDivisionsRepository.getDevices(divisionId, new DivisionsDataSource.LoadDevicesCallback() {
             @Override
-            public void onDevicesLoaded(List<DeviceState> devices) {
+            public void onDevicesLoaded(List<DeviceState> deviceStates) {
 
                 if (!mDivisionsView.isActive()) {
                     return;
                 }
                 mDivisionsView.setLoadingIndicator(false);
-                mDivisionsView.showDivisionDevicesUi(divisionId, devices);
+                mDivisionsView.showDivisionDevicesUi(divisionId, deviceStates);
             }
 
             @Override
@@ -68,8 +68,7 @@ public class DivisionsPresenter implements DivisionsContract.Presenter {
 
                 mDivisionsView.showDivisionDevicesUi(divisionId, new ArrayList<DeviceState>());
             }
-        };
-        mDivisionsRepository.getDevices(divisionId, devicesCallback);
+        });
     }
 
     @Override

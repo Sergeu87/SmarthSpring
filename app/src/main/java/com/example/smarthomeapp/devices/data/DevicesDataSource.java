@@ -58,7 +58,7 @@ public interface DevicesDataSource {
     /**
      * Update device value.
      *
-     * @param devicesValues the devices values
+     * @param deviceState the device state
      * @param callback      the callback
      */
     void updateDeviceValue(@NonNull DeviceState deviceState, @NonNull UpdateDeviceValueCallback callback);

@@ -86,13 +86,13 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
      * this fragment using the provided parameters.
      *
      * @param divisionId           the division id
-     * @param deviceStateRespons the device state responses
+     * @param deviceStates the device state responses
      * @return A new instance of fragment DivisionsFragment.
      */
-    public static DevicesFragment newInstance(String divisionId, List<DeviceState> deviceStateRespons) {
+    public static DevicesFragment newInstance(String divisionId, List<DeviceState> deviceStates) {
         DevicesFragment fragment = new DevicesFragment();
         Bundle args = new Bundle();
-        args.putParcelableArrayList(DEVICES_STATES_ARG, new ArrayList<Parcelable>(deviceStateRespons));
+        args.putParcelableArrayList(DEVICES_STATES_ARG, new ArrayList<Parcelable>(deviceStates));
         args.putString(DIVISION_ID_ARG, divisionId);
         fragment.setArguments(args);
         return fragment;
@@ -109,16 +109,16 @@ public class DevicesFragment extends BaseFragment implements DevicesContract.Vie
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        List<DeviceState> devicesStateList = new ArrayList<>();
+        List<DeviceState> devicesStates = new ArrayList<>();
         if (getArguments() != null) {
-            devicesStateList = getArguments().getParcelableArrayList(DEVICES_STATES_ARG);
+            devicesStates = getArguments().getParcelableArrayList(DEVICES_STATES_ARG);
             mDivisionId = getArguments().getString(DIVISION_ID_ARG);
         }
 
 
         mPresenter = new DevicesPresenter(
-                devicesStateList,
-                Injection.provideDevicesRepository(getContext()),
+                devicesStates,
+                Injection.provideDevicesRepository(),
                 this,
                 mDivisionId
         );
