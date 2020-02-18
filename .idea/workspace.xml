@@ -12,78 +12,11 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5c24bb3-4493-4d45-9cc5-0ac2cd5d5f17" name="Default Changelist" comment="fixed home configuration from server">
-      <change afterPath="$PROJECT_DIR$/app/libs/commonlib.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="e5c24bb3-4493-4d45-9cc5-0ac2cd5d5f17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/HouseConfigLoadPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/HouseConfigLoadPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/app/SmartHomeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/app/SmartHomeApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicePropertiesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicePropertiesAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/remote/DevicesRemoteDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/remote/DevicesRemoteDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/remote/DevicesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/remote/DevicesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/DivisionsDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/DivisionsDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/DivisionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/DivisionsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/remote/DivisionsRemoteDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/remote/DivisionsRemoteDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/remote/DivisionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/remote/DivisionsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/httpentities/DeviceStateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/httpentities/DeviceState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/httpentities/DevicesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/httpentities/DevicesResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/httpentities/DivisionDevicesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/httpentities/DivisionDevicesResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/splash/SplashPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/splash/SplashPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/splash/SplashScreenActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/splash/SplashScreenActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/splash/SplashScreenContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/splash/SplashScreenContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/HouseConfigService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/HouseConfigService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/UserAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/UserAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_error_outline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_error_outline.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/basic_config_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/DomoBusConfigLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/HouseConfigConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/ServerConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/Utils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/AccessLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/AccessLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/DeviceClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/DeviceClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/DeviceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/DeviceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/DeviceType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Division.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/DivisionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/DivisionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/EnumValueType.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/EnumValueType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/Enumerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Enumerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/HomeConfigEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/HomeConfigEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/ScalarValueType.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/ScalarValueType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/ValueConversion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/HandlersOLD.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/HandlersOLD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/HouseControlServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/HouseControlServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/handlers/DevicesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/handlers/DevicesHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/handlers/DivisionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/handlers/DivisionsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/server/handlers/UsersHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/handlers/UsersHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <ignored path=".idea/caches/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -129,11 +62,52 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1521">
-              <caret line="116" column="62" lean-forward="true" selection-start-line="116" selection-start-column="62" selection-end-line="116" selection-end-column="62" />
+            <state relative-caret-position="172">
+              <caret line="120" column="71" lean-forward="true" selection-start-line="120" selection-start-column="71" selection-end-line="120" selection-end-column="71" />
               <folding>
-                <element signature="e#4215#4461#0" expanded="true" />
-                <element signature="e#4460#4461#0" expanded="true" />
+                <element signature="e#4135#4562#0" expanded="true" />
+                <element signature="e#4561#4562#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicePropertiesAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="233" selection-start-line="233" selection-end-line="233" />
+              <folding>
+                <element signature="docComment;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;method#DevicePropertiesAdapter#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#DevicePropertiesAdapter#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#onCreateViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#onBindViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#getItemViewType#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;field#enumTitle#0;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;field#enumSelectionList#0;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;method#EnumPropertyViewHolder#0;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#EnumPropertyViewHolder#0;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;field#scalarTitle#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;field#scalarMax#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;field#scalarMin#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;field#scalarSeekBar#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;method#ScalarPropertyViewHolder#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#ScalarPropertyViewHolder#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;class#SelectableOptionsListViewAdapter#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;method#SelectableOptionsListViewAdapter#0;class#SelectableOptionsListViewAdapter#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#onCreateViewHolder#0;class#SelectableOptionsListViewAdapter#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#checkSelectedValue#0;class#SelectableOptionsListViewAdapter#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;class#EnumeratedViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="class#EnumeratedViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="docComment;method#EnumeratedViewHolder#0;class#EnumeratedViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="method#EnumeratedViewHolder#0;class#EnumeratedViewHolder#0;class#DevicePropertiesAdapter#0" />
+                <element signature="e#10729#10730#0" expanded="true" />
+                <element signature="e#10761#10762#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -177,17 +151,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/RemoteUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlPresenter.java" />
         <option value="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/HomeConfigEntity.java" />
         <option value="$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/DomoBusConfigLoader.java" />
         <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_error_outline.xml" />
         <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicePropertiesAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/Constants.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlContract.java" />
@@ -209,7 +180,20 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/remote/DevicesService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/remote/DevicesRemoteDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/RemoteUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/remote/DivisionsRemoteDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/Injection.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/enumerated_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicePropertiesAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesAdapter.java" />
       </list>
     </option>
@@ -225,6 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -247,7 +232,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -276,6 +260,31 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="smarthomeapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sergii-smart-home" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="smarthomeapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="devices" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sergii-smart-home" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="smarthomeapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sergii-smart-home" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="sergii-smart-home" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="sergii-smart-home" type="1abcf292:AndroidViewProjectNode" />
@@ -417,17 +426,30 @@
       <option name="project" value="LOCAL" />
       <updated>1581711791325</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="pzida">
+      <created>1581730422323</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581730422323</updated>
+    </task>
+    <task id="LOCAL-00003" summary="selection radio buttons working">
+      <created>1582054342370</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582054342370</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.1977612" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.24307036" />
       <window_info id="Structure" order="4" side_tool="true" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Build Variants" order="6" side_tool="true" />
@@ -441,13 +463,13 @@
       <window_info anchor="bottom" id="Build" order="5" weight="0.29144096" />
       <window_info anchor="bottom" id="Logcat" order="6" />
       <window_info anchor="bottom" id="Android Profiler" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.24485373" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.44745395" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.17659806" />
+      <window_info active="true" anchor="bottom" id="Debug" order="9" visible="true" weight="0.4409534" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.50153375" side_tool="true" weight="0.15298508" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" sideWeight="0.49846625" visible="true" weight="0.15298508" />
+      <window_info anchor="right" id="Gradle" order="2" sideWeight="0.49846625" weight="0.15298508" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Preview" order="5" />
@@ -456,22 +478,24 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="fixed home configuration from server" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed home configuration from server" />
+    <MESSAGE value="pzida" />
+    <MESSAGE value="selection radio buttons working" />
+    <option name="LAST_COMMIT_MESSAGE" value="selection radio buttons working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsPresenter.java</url>
-          <line>82</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginActivity.java</url>
-          <line>280</line>
+          <line>286</line>
           <properties />
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesAdapter.java</url>
+          <line>125</line>
+          <properties />
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -479,199 +503,56 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>SmartHomeApplication.getInstance()</expression-string>
+        <expression-string>radioButtons.get(0).getText()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>SmartHomeApplication
-                .getInstance()
-                .getHomeConfiguration()</expression-string>
+        <expression-string>radioButtons.get(0)</expression-string>
         <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>radioButtons.get(checkedItemIndex)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(DevicePropertiesAdapter) ((RecyclerView) propertyListView).getAdapter()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>((RecyclerView) propertyListView).getAdapter()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>propertyListView</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>((LinearLayout) ((ViewGroup) v.getParent()).getParent()).findViewById(R.id.property_list)</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>com.example.smarthomeapp.R,android.widget.LinearLayout</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(View) ((ViewGroup) v.getParent()).getParent()</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>com.example.smarthomeapp.R,android.widget.LinearLayout</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(LinearLayout) ((ViewGroup) v.getParent()).getParent();</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>com.example.smarthomeapp.R,android.widget.LinearLayout</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_all_control.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="42" column="15" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_devices.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/smarthomeapp/allcontrol/AllControlFragment_ViewBinding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bottom_manual_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/DeviceClass.java" />
-    <entry file="file://$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/AccessLevel.java" />
-    <entry file="file://$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/domain/Device.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/HouseConfigLoadPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/HouseConfigService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/example/server/HouseControlServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commonlib/src/main/java/com/example/utils/DomoBusConfigLoader.java" />
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/example/server/HandlersOLD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-536">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/app/SmartHomeApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_error_outline.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicePropertiesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="112" column="23" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/DeviceClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/DeviceService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -700,20 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Enumerated.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/EnumValueType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Floor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -728,31 +595,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Property.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/ScalarValueType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -770,48 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/HomeConfigEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/smarthomeapp/devices/DevicesAdapter$DeviceViewHolder_ViewBinding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-842">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="63" column="59" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/remote/DevicesService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -819,20 +623,355 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/app/SmartHomeApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-25/android.jar!/android/widget/TextView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="721" column="16" selection-start-line="721" selection-start-column="16" selection-end-line="721" selection-end-column="16" />
+          <folding>
+            <element signature="e#19187#19188#0" expanded="true" />
+            <element signature="e#19238#19239#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/RemoteUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/smarthomeapp/login/LoginActivity_ViewBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/smarthomeapp/devices/DevicesFragment_ViewBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/smarthomeapp/devices/DevicePropertiesAdapter$ScalarPropertyViewHolder_ViewBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/smarthomeapp/devices/DevicePropertiesAdapter$EnumPropertyViewHolder_ViewBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/smarthomeapp/devices/DevicesAdapter$DeviceViewHolder_ViewBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-25/android.jar!/android/view/LayoutInflater.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/property_enum.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/DivisionsDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/DivisionsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/data/remote/DivisionsRemoteDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="49" column="49" lean-forward="true" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+          <folding>
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/divisions/DivisionsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-417">
+          <caret line="113" column="90" selection-start-line="113" selection-start-column="90" selection-end-line="113" selection-end-column="90" />
+          <folding>
+            <element signature="e#5635#5658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/util/Injection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="73" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/ScalarValueType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#1773#1774#0" expanded="true" />
+            <element signature="e#1804#1805#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Property.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/login/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="277" column="50" selection-start-line="277" selection-start-column="50" selection-end-line="277" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9572#9573#0" expanded="true" />
+            <element signature="e#9639#9640#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/EnumValueType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/HomeConfigEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/model/Enumerated.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/division_item.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/allcontrol/AllControlFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="86" column="23" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/25.2.0/e84176da253cc08bb3e4f6598e10e82bc499cfe2/recyclerview-v7-25.2.0-sources.jar!/android/support/v7/widget/RecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="150" column="13" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+          <folding>
+            <element signature="e#269907#269908#0" expanded="true" />
+            <element signature="e#269965#269966#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enumerated_item.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/device_item.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/DevicesRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="69" column="44" lean-forward="true" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/data/remote/DevicesRemoteDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-434">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        <state relative-caret-position="507">
+          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/httpentities/PropertyValueResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicePropertiesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
+          <folding>
+            <element signature="docComment;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;method#DevicePropertiesAdapter#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#DevicePropertiesAdapter#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#onCreateViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#onBindViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#getItemViewType#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;field#enumTitle#0;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;field#enumSelectionList#0;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;method#EnumPropertyViewHolder#0;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#EnumPropertyViewHolder#0;class#EnumPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;field#scalarTitle#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;field#scalarMax#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;field#scalarMin#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;field#scalarSeekBar#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;method#ScalarPropertyViewHolder#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#ScalarPropertyViewHolder#0;class#ScalarPropertyViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;class#SelectableOptionsListViewAdapter#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;method#SelectableOptionsListViewAdapter#0;class#SelectableOptionsListViewAdapter#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#onCreateViewHolder#0;class#SelectableOptionsListViewAdapter#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#checkSelectedValue#0;class#SelectableOptionsListViewAdapter#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;class#EnumeratedViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="class#EnumeratedViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="docComment;method#EnumeratedViewHolder#0;class#EnumeratedViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="method#EnumeratedViewHolder#0;class#EnumeratedViewHolder#0;class#DevicePropertiesAdapter#0" />
+            <element signature="e#10729#10730#0" expanded="true" />
+            <element signature="e#10761#10762#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smarthomeapp/devices/DevicesAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1521">
-          <caret line="116" column="62" lean-forward="true" selection-start-line="116" selection-start-column="62" selection-end-line="116" selection-end-column="62" />
+        <state relative-caret-position="172">
+          <caret line="120" column="71" lean-forward="true" selection-start-line="120" selection-start-column="71" selection-end-line="120" selection-end-column="71" />
           <folding>
-            <element signature="e#4215#4461#0" expanded="true" />
-            <element signature="e#4460#4461#0" expanded="true" />
+            <element signature="e#4135#4562#0" expanded="true" />
+            <element signature="e#4561#4562#0" expanded="true" />
           </folding>
         </state>
       </provider>

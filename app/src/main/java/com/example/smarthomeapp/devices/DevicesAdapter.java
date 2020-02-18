@@ -8,16 +8,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.allcontrol.AllControlContract;
 import com.example.smarthomeapp.app.SmartHomeApplication;
 import com.example.smarthomeapp.httpentities.DeviceState;
+import com.example.smarthomeapp.httpentities.PropertyValueResponse;
 import com.example.smarthomeapp.util.IconUtils;
 import com.example.smarthomeapp.model.Device;
 import com.example.smarthomeapp.model.Division;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -105,6 +108,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
         holder.propertiesList.setLayoutManager(new LinearLayoutManager(mContext));
         holder.propertiesList.setAdapter(new DevicePropertiesAdapter(
                         mContext,
+                        device.getId(),
                         device.getRefDeviceType(),
                         deviceState.getValues()
                 )
@@ -112,10 +116,18 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.DeviceVi
 
         holder.saveValueButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                final View propertyListView = ((LinearLayout) ((ViewGroup) view.getParent())
+                        .getParent()).findViewById(R.id.property_list);
+                final DevicePropertiesAdapter devicePropertiesAdapter = (DevicePropertiesAdapter) ((RecyclerView) propertyListView).getAdapter();
+
+                final PropertyValueResponse currentDeviceValue = devicePropertiesAdapter.getmCurrentPropertyValueResponse();
+
                 final DeviceState request = new DeviceState();
-//                request.deviceId = ;
-//                request.values = ;
+                request.deviceId = devicePropertiesAdapter.getmDeviceId();
+                final ArrayList<PropertyValueResponse> values = new ArrayList<>();
+                values.add(currentDeviceValue);
+                request.values = values;
                 mDevicesPresenter.saveDeviceValue(request);
             }
         });

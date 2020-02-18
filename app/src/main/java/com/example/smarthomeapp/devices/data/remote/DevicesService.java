@@ -29,7 +29,7 @@ public interface DevicesService {
      * @param deviceState device id and its property values
      * @return Returns device with id created by server
      */
-    @POST("devices")
+    @POST("device")
     Call<DeviceState> saveDevice(@Body DeviceState deviceState);
 
 }

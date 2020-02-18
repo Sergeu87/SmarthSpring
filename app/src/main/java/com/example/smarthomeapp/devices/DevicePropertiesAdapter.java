@@ -20,6 +20,7 @@ import com.example.smarthomeapp.model.HomeConfigEntity;
 import com.example.smarthomeapp.model.Property;
 import com.example.smarthomeapp.model.ScalarValueType;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -33,6 +34,7 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Context mContext;
     private HomeConfigEntity mConfigEntity;
     private String mDeviceTypeId;
+    private String mDeviceId;
     private List<PropertyValueResponse> mPropertyValueResponses;
     private Property mCurrentProperty;
     private PropertyValueResponse mCurrentPropertyValueResponse;
@@ -50,10 +52,12 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
      */
     public DevicePropertiesAdapter(
             Context context,
+            String deviceId,
             String deviceTypeId,
             List<PropertyValueResponse> propertyValueResponses
     ) {
         mContext = context;
+        mDeviceId = deviceId;
         mDeviceTypeId = deviceTypeId;
         mConfigEntity = SmartHomeApplication.getInstance().getHomeConfiguration();
         mPropertyValueResponses = propertyValueResponses;
@@ -209,6 +213,7 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         private List<Enumerated> _enumeratedOptionsList;
         private String selectedEnumValueAsString;
         private RadioGroup radioGroup;
+        private List<RadioButton> radioButtons;
         private boolean added;
 
         /**
@@ -219,11 +224,17 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         public SelectableOptionsListViewAdapter(List<Enumerated> enumeratedOptions, String selectedEnumValue) {
             this._enumeratedOptionsList = enumeratedOptions;
             this.selectedEnumValueAsString = selectedEnumValue;
+            this.radioButtons = new LinkedList<>();
             this.radioGroup = new RadioGroup(mContext);
 
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup radioGroup, int checkedItemIndex) {
+                    if (checkedItemIndex != -1) {
+                        final RadioButton radioButton = radioButtons.get(checkedItemIndex);
+                        final String checkedItemText = radioButton.getText().toString();
+                        mCurrentPropertyValueResponse.propertyValue = checkedItemText;
+                    }
                 }
             });
         }
@@ -240,7 +251,6 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         public void onBindViewHolder(EnumeratedViewHolder holder, int position) {
             final Enumerated enumerated = _enumeratedOptionsList.get(position);
 
-//            final RadioButton enumeratedRadioButton = new RadioButton(mContext);
             final RadioButton enumeratedRadioButton = holder.enumeratedRadioButton;
             enumeratedRadioButton.setText(enumerated.getName());
             enumeratedRadioButton.setId(position);
@@ -255,10 +265,10 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
             }
             radioGroup.addView(enumeratedRadioButton);
+            radioButtons.add(enumeratedRadioButton);
 
-            if (enumerated.getName().equals(selectedEnumValueAsString)) {
-                radioGroup.clearCheck();
-                enumeratedRadioButton.setChecked(true);
+            if (_enumeratedOptionsList.size() == position + 1) {
+                checkSelectedValue(selectedEnumValueAsString);
             }
         }
 
@@ -271,6 +281,16 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
         public int getItemCount() {
             return _enumeratedOptionsList.size();
         }
+
+        private void checkSelectedValue(String selectedValue) {
+            for (RadioButton button : radioButtons) {
+                if (button.getText().equals(selectedValue)) {
+                    radioGroup.clearCheck();
+                    button.setChecked(true);
+                }
+            }
+        }
+
     }
 
     /**
@@ -292,5 +312,13 @@ public class DevicePropertiesAdapter extends RecyclerView.Adapter<RecyclerView.V
             super(view);
             ButterKnife.bind(this, view);
         }
+    }
+
+    public PropertyValueResponse getmCurrentPropertyValueResponse() {
+        return mCurrentPropertyValueResponse;
+    }
+
+    public String getmDeviceId() {
+        return mDeviceId;
     }
 }

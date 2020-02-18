@@ -20,6 +20,7 @@ public class DevicesPresenter implements DevicesContract.Presenter{
     private final DevicesRepository mDevicesRepository;
     private final DevicesContract.View mDevicesView;
 
+    private DeviceState deiviceStateToSave;
     private Map<String, String> mDevicesValuesToSave;
 
     private List<DeviceState> mDevicesStates;
