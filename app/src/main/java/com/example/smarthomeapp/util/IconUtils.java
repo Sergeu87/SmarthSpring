@@ -17,18 +17,18 @@ public class IconUtils {
     private static HashMap<String, Integer> devicesIconsMap = new HashMap<>();
 
     static {
-        divisionIconsMap.put(BEDROOM, R.drawable.ic_bed);
-        divisionIconsMap.put(KITCHEN, R.drawable.ic_bed);
-        divisionIconsMap.put(BATHROOM, R.drawable.ic_bed);
-        divisionIconsMap.put(HALL, R.drawable.ic_bed);
-        divisionIconsMap.put(ATTIC, R.drawable.ic_bed);
-        divisionIconsMap.put(LIVING_ROOM, R.drawable.ic_bed);
-        divisionIconsMap.put(GARDEN, R.drawable.ic_bed);
+        divisionIconsMap.put(BEDROOM, R.drawable.door);
+        divisionIconsMap.put(KITCHEN, R.drawable.door);
+        divisionIconsMap.put(BATHROOM, R.drawable.door);
+        divisionIconsMap.put(HALL, R.drawable.door);
+        divisionIconsMap.put(ATTIC, R.drawable.door);
+        divisionIconsMap.put(LIVING_ROOM, R.drawable.door);
+        divisionIconsMap.put(GARDEN, R.drawable.door);
 
-        devicesIconsMap.put(ADJUSTABLE_LIGHT, R.drawable.ic_filament);
-        devicesIconsMap.put(TEMPERATURE_SENSOR, R.drawable.ic_temperature);
-        devicesIconsMap.put(OVEN, R.drawable.ic_oven);
-        devicesIconsMap.put(HUMIDITY_RATIO, R.drawable.ic_apps);
+        devicesIconsMap.put(ADJUSTABLE_LIGHT, R.drawable.filament);
+        devicesIconsMap.put(TEMPERATURE_SENSOR, R.drawable.temperature);
+        devicesIconsMap.put(OVEN, R.drawable.oven);
+        devicesIconsMap.put(HUMIDITY_RATIO, R.drawable.conditioner);
     }
 
 
